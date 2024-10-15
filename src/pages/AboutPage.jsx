@@ -10,7 +10,7 @@ const AboutPage = () => {
       <div className="image-text-container">
         <img src="./src/images/AboutPage-1.JPG" alt="About Page" className="about-image" />
         <p className='image-paragraph'>
-          Hi UNSW students! If you are struggling checking out different COMP courses on hundreds of tabs, you're probably like me—spending a lot of time just to find the most suitable one for you.
+          Hi UNSW students! If you are struggling checking out different COMP courses on hundreds of tabs, you're probably like me—spending a lot of time just to find the most suitable one for me.
         </p>
       </div>
 
@@ -91,8 +91,8 @@ const AboutPage = () => {
         </div>
 
         <div className='team-member'>
-          <img src="./src/images/LeeChang.jpg" alt="Lee Chang" className='team-photo' />
-          <p><strong>Lee Chang</strong><br />Tech Lead</p>
+          <img src="./src/images/LeeChang.jpg" alt="Chang Hyun Lee" className='team-photo' />
+          <p><strong>Chang Hyun Lee</strong><br />Tech Lead</p>
         </div>
 
         <div className='team-member'>
