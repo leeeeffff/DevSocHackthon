@@ -44,10 +44,10 @@ const Login = () => {
         </div>
         <span className="back-text">Back to Portfolio</span>
       </Link>
-     <div className="navbar">
+      <div className="navbar">
         <img src={logo} alt="Logo" className="logo" />
       </div>
-      
+
       <div className="login-container">
         <h1>Choose your path...</h1>
         <p>Log in to your account</p>
@@ -56,7 +56,7 @@ const Login = () => {
           <img src={GoogleLogo} alt="Google" className="google-logo" />
           Continue with Google
         </button>
-        
+
         <button onClick={handleAppleLogin} className="login-button github">
           <img src={GithubLogo} alt="Github" className="github-logo" />
           Continue with Github
