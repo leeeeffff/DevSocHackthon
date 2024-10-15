@@ -1,20 +1,31 @@
 import React, { useState } from 'react';
-import '../style/Login.css'; // Make sure to create and link a corresponding CSS file
-import logo from '../assets/Logo1.png'; // Adjust the path based on the structure
-import GoogleLogo from '../assets/GoogleLogo.png'
-import GithubLogo from '../assets/GithubLogo.png'
+import '../style/Login.css'; // Ensure this file contains your custom styles
+import logo from '../assets/Logo1.png'; // Adjust the path based on your structure
+import GoogleLogo from '../assets/GoogleLogo.png';
+import GithubLogo from '../assets/GithubLogo.png';
+import { Link } from 'react-router-dom'
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState(''); // Added password state
 
+  // Handle email input change
   const handleInputChange = (e) => {
     setEmail(e.target.value);
   };
 
+  // Handle password input change
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Email:', email);
-    // Implement your email login logic here
+    console.log('Password:', password);
+    // Implement your email and password login logic here
   };
 
   const handleGoogleLogin = () => {
@@ -34,7 +45,12 @@ const Login = () => {
 
   return (
     <div className="login-page">
-    
+      <Link to="/" className="back-arrow">
+        <div className="arrow-left">
+          <span></span>
+        </div>
+        <span className="back-text">Back to Portfolio</span>
+      </Link>
      {/* Logo at the top left */}
      <div className="navbar">
         <img src={logo} alt="Logo" className="logo" />
@@ -71,6 +87,16 @@ const Login = () => {
             placeholder="Enter your email address..."
             required
           />
+
+          <label className="password-label">Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="Enter your password..."
+            required
+          />
+
           <button type="submit" className="continue-button">
             Continue
           </button>
