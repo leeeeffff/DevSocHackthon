@@ -6,7 +6,11 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, LSTM, Dense
 
+<<<<<<< HEAD
 openai.api_key = "sk-wXMqfraJj-uktOjeeWyM4L-RA6QdxEhPcoWHOUtTv9T3BlbkFJKWRzWeJ1xWFqwuaptF_5N_9PJNukR9j-bbH7UQ1MoA"
+=======
+openai.api_key = "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"
+>>>>>>> 30bcfc8 (worked on landing page)
 
 core_courses_prerequisites = {
     "COMP1511": {"prerequisite": []},
