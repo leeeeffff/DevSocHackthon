@@ -24,15 +24,36 @@ const SignUp = () => {
   };
 
   // Handle form submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       return;
     }
-    setError('');
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Sign-up successful', data);
+        alert('Sign-up successful');
+      } else {
+        setError(data.message);
+      }
+
+    } catch (error) {
+      console.error('Error during sign-up:', error);
+      setError('An error occurred. Please try again later.');
+    }
   };
 
   const handleGoogleSignUp = () => {
@@ -55,7 +76,7 @@ const SignUp = () => {
         </div>
         <span className="back-text">Back to Portfolio</span>
       </Link>
-      
+
       <div className="SignUp-container">
         <h1>Choose your path...</h1>
         <p>Create your account</p>
@@ -64,7 +85,7 @@ const SignUp = () => {
           <img src={GoogleLogo} alt="Google" className="google-logo" />
           Continue with Google
         </button>
-        
+
         <button onClick={handleGithubSignUp} className="SignUp-button github">
           <img src={GithubLogo} alt="Github" className="github-logo" />
           Continue with Github

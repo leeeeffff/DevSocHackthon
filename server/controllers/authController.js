@@ -1,33 +1,26 @@
-const pool = require('../config/db'); // get database connection pool
+const pool = require('../config/db'); // get db
+const bcrypt = require('bcrypt'); // for pass hashing
 
-// handle login (email login)
+const signupUser = async (req, res) => {
+  const { email, password } = req.body;
 
-const loginUser = async (req, res) => {
-    const { email } = req.body; // get email from req body
-    try {
-        // check if user exists in db
-        const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-
-        // make new user if doesnt exist
-        if (result.rows.length === 0) {
-            const newUser = await pool.query(
-                'INSERT INTO users (email) VALUES ($1) RETURNING *',
-                [email]
-            );
-            return res.status(200).json({ message: 'User created', user: newUser.rows[0] });
-        }
-        else {
-            //if user exists, return details
-            const existingUser = result.rows[0];
-            return res.status(200).json({ message: 'User exists', user: existingUser });
-        }
+  try {
+    const existingUser = await pool.query('SELECT * FROM users WHERE email = $1', [email]); // check if existing user
+    console.log(existingUser);
+    if (existingUser.rows.length > 0) {
+      return res.status(400).json({ message: 'User already exists' });
     }
-    catch(error) {
-        console.error('Error during login', error);
-        return res.status(500).json({ message: 'Server error', error });
-    }
+
+    const hashedPassword = await bcrypt.hash(password, 10); // encrypt pass
+    const newUser = await pool.query( // input new user
+      'INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *',
+      [email, hashedPassword]
+    );
+
+    res.status(201).json({ message: 'User created', user: newUser.rows[0] }); // success
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' }); // fail
+  }
 };
 
-module.exports = { loginUser };
-
-
+module.exports = { signupUser };
