@@ -74,7 +74,7 @@ const SignUp = () => {
         <div className="arrow-left">
           <span></span>
         </div>
-        <span className="back-text">Back to Portfolio</span>
+        <span className="back-text">Back to Home Page</span>
       </Link>
 
       <div className="SignUp-container">

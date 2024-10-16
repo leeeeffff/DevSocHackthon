@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/AboutPage.css';
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   return (
@@ -121,7 +122,9 @@ const AboutPage = () => {
         </div>
         <div className="footer-bottom">
           <div className="footer-left">
-            <img src="./src/images/logo.jpg" alt="Company Logo" className="footer-logo" />
+            <Link to="/">
+              <img src="./src/images/logo.jpg" alt="Company Logo" className="footer-logo" />
+            </Link>
             <div className="social-icons">
               <a href="https://instagram.com">
               <img src="./src/images/instagram.svg" alt="Instagram" style={{ width: '24px', height: '24px' }} />
@@ -139,7 +142,7 @@ const AboutPage = () => {
               <img src="./src/images/youtube.svg" alt="YouTube" style={{ width: '24px', height: '24px' }} />
               </a>
             </div>
-            <p>&copy; 2024 Pathways Labs, Inc.</p>
+            <p>&copy; 2024 Pathways, Inc.</p>
           </div>
           <div className="footer-right">
             <div className="footer-columns">
@@ -158,8 +161,6 @@ const AboutPage = () => {
                 <ul>
                   <li><a href="#">iOS & Android</a></li>
                   <li><a href="#">Mac & Windows</a></li>
-                  <li><a href="#">Calendar</a></li>
-                  <li><a href="#">Web Clipper</a></li>
                 </ul>
               </div>
               <div className="footer-column">
