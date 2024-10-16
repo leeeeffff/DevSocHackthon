@@ -3,13 +3,14 @@ import '../style/SignUp.css';
 import logo from '../assets/Logo1.png';
 import GoogleLogo from '../assets/GoogleLogo.png';
 import GithubLogo from '../assets/GithubLogo.png';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  // const navigate = useNavigate();
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -46,6 +47,7 @@ const SignUp = () => {
       if (response.ok) {
         console.log('Sign-up successful', data);
         alert('Sign-up successful');
+        // navigate(`/user-information/${data.user.id}`);
       } else {
         setError(data.message);
       }
