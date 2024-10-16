@@ -6,40 +6,33 @@ import GithubLogo from "../assets/GithubLogo.png";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(""); // Added password state
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  // Handle email input change
   const handleInputChange = (e) => {
     setEmail(e.target.value);
   };
 
-  // Handle password input change
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    // Implement your email and password login logic here
+    console.log('Email:', email);
+    console.log('Password:', password);
   };
 
   const handleGoogleLogin = () => {
-    console.log("Login with Google");
-    // Implement Google login logic here
+    console.log('Login with Google');
   };
 
   const handleAppleLogin = () => {
-    console.log("Login with Apple");
-    // Implement Apple login logic here
+    console.log('Login with Apple');
   };
 
   const handleSSOLogin = () => {
-    console.log("Login with SSO");
-    // Implement SSO logic here
+    console.log('Login with SSO');
   };
 
   return (
@@ -50,12 +43,10 @@ const Login = () => {
         </div>
         <span className="back-text">Back to Portfolio</span>
       </Link>
-      {/* Logo at the top left */}
-      <div className="navbar">
+     <div className="navbar">
         <img src={logo} alt="Logo" className="logo" />
       </div>
-
-      {/* Main login content */}
+      
       <div className="login-container">
         <h1>Choose your path...</h1>
         <p>Log in to your account</p>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // For navigation
-import '../style/SignUp.css'; // Make sure to create and link a corresponding CSS file
-import logo from '../assets/Logo1.png'; // Adjust the path based on the structure
+import '../style/SignUp.css';
+import logo from '../assets/Logo1.png';
 import GoogleLogo from '../assets/GoogleLogo.png';
 import GithubLogo from '../assets/GithubLogo.png';
 
@@ -26,38 +25,59 @@ const SignUp = () => {
   };
 
   // Handle form submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       setError('Passwords do not match');
       return;
     }
-    setError(''); // Clear the error if passwords match
-    console.log('Email:', email);
-    console.log('Password:', password);
 
-    // Navigate to the form page on successful sign-up
-    navigate('/FormPage');
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Sign-up successful', data);
+        alert('Sign-up successful');
+      } else {
+        setError(data.message);
+      }
+
+    } catch (error) {
+      console.error('Error during sign-up:', error);
+      setError('An error occurred. Please try again later.');
+    }
   };
 
   const handleGoogleSignUp = () => {
     console.log('SignUp with Google');
-    // Implement Google SignUp logic here
   };
 
   const handleGithubSignUp = () => {
     console.log('SignUp with Github');
-    // Implement Github SignUp logic here
   };
 
   return (
     <div className="SignUp-page">
-      {/* Logo at the top left */}
       <div className="navbar">
         <img src={logo} alt="Logo" className="logo" />
       </div>
 
-      {/* Main SignUp content */}
+      <Link to="/" className="back-arrow">
+        <div className="arrow-left">
+          <span></span>
+        </div>
+        <span className="back-text">Back to Portfolio</span>
+      </Link>
+
       <div className="SignUp-container">
         <h1>Choose your path...</h1>
         <p>Create your account</p>
@@ -66,7 +86,7 @@ const SignUp = () => {
           <img src={GoogleLogo} alt="Google" className="google-logo" />
           Continue with Google
         </button>
-        
+
         <button onClick={handleGithubSignUp} className="SignUp-button github">
           <img src={GithubLogo} alt="Github" className="github-logo" />
           Continue with Github
@@ -74,7 +94,6 @@ const SignUp = () => {
 
         <hr className="separator" />
 
-        {/* SignUp form */}
         <form onSubmit={handleSubmit}>
           <label className="email-label">Email</label>
           <input
@@ -106,7 +125,6 @@ const SignUp = () => {
             required
           />
 
-          {/* Error message for password mismatch */}
           {error && <p className="error-message">{error}</p>}
 
           <button type="submit" className="continue-button">
