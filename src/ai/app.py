@@ -15,5 +15,20 @@ def run_ai():
     except Exception as e:
         return jsonify({"error": str(e)}), 500  # Handle any potential errors
 
+@app.route('/chat', methods=['POST'])
+def chat():
+    try:
+        user_message = request.json.get('message')  # Get user input
+
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": user_message}]
+        )
+
+        gpt_message = response['choices'][0]['message']['content']
+        return jsonify({"response": gpt_message})  # Return GPT response
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == "__main__":
     app.run(debug=True)
