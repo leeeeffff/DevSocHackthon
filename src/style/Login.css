@@ -1,0 +1,187 @@
+/* Navbar styling */
+/* Navbar styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    background-color: transparent; /* Set to transparent or white */
+  }
+  
+  .logo {
+    height: 40px; /* Adjust height based on how large you want the logo */
+    width: auto;  /* Keep the aspect ratio intact */
+    display: block; /* Ensures the logo is displayed as a block element */
+  }
+
+  .google-logo {
+    height: 20px;
+    width: auto;
+  }
+
+  .github-logo {
+    height: 20px;
+    width: auto;
+  }
+   
+  /* Styling for the login page */
+  .login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    padding-top: 80px; /* Padding to avoid overlap with the navbar */
+  }
+  
+  .login-container {
+    width: 400px;
+    padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .login-container h1 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  .login-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .separator {
+    border: none;          /* Remove default border */
+    border-top: 1px solid black;  /* Create a thin black line */
+    margin: 20px 0;        /* Add some spacing around the line */
+    width: 100%;           /* Make it span the full width */
+  }
+
+  .login-button img {
+    margin-right: 10px;
+  }
+  
+  .email-label {
+    color: grey;
+    margin-top : 30px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .google {
+    background-color: white;
+  }
+  
+  .github {
+    background-color: white;
+    color: hsl(180, 60%, 10%);
+  }
+  
+  .sso {
+    background-color: white;
+  }
+  
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .continue-button {
+    width: 422px;
+    padding: 10px;
+    background-color:  #344966;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .continue-button:hover {
+    background-color: #0D1821;
+    size: 20px;
+  }
+  
+  small {
+    display: block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #999;
+  }
+
+  back-arrow {
+    position: fixed; 
+    top: 20px; 
+    left: 30px; 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    overflow: hidden;
+    z-index: 1000; 
+  }
+
+  .back-arrow {
+    margin-right: 1200px;
+    margin-bottom: 130px;
+  }
+
+  .arrow-left {
+    display: inline-block;
+  }
+
+  .arrow-left span {
+    display: block;
+    width: 20px;
+    height: 25px;
+    border-top: 2px solid #333;
+    border-left: 2px solid #333;
+    transform: rotate(-45deg);
+    margin-top: 90px; 
+    margin-left: 30px;
+    transition: box-shadow 0.3s ease;
+    position: relative;
+  }
+
+  .back-text {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+    margin-left: 10px;
+    margin-top: 90px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
+    font-family: 'BemirsDemo', sans-serif;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .back-arrow:hover .back-text {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .back-arrow:hover .arrow-left span {
+    border-color: #555555;
+  }
