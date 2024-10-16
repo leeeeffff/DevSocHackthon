@@ -6,7 +6,6 @@ const signupUser = async (req, res) => {
 
   try {
     const existingUser = await pool.query('SELECT * FROM users WHERE email = $1', [email]); // check if existing user
-    console.log(existingUser);
     if (existingUser.rows.length > 0) {
       return res.status(400).json({ message: 'User already exists' });
     }
