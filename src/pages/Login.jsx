@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import '../style/Login.css'; // Ensure this file contains your custom styles
-import logo from '../assets/Logo1.png'; // Adjust the path based on your structure
-import GoogleLogo from '../assets/GoogleLogo.png';
-import GithubLogo from '../assets/GithubLogo.png';
-import { Link } from 'react-router-dom'
-
+import React, { useState } from "react";
+import "../style/Login.css"; // Ensure this file contains your custom styles
+import logo from "../assets/Logo1.png"; // Adjust the path based on your structure
+import GoogleLogo from "../assets/GoogleLogo.png";
+import GithubLogo from "../assets/GithubLogo.png";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(''); // Added password state
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState(""); // Added password state
 
   // Handle email input change
   const handleInputChange = (e) => {
@@ -23,23 +22,23 @@ const Login = () => {
   // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log("Email:", email);
+    console.log("Password:", password);
     // Implement your email and password login logic here
   };
 
   const handleGoogleLogin = () => {
-    console.log('Login with Google');
+    console.log("Login with Google");
     // Implement Google login logic here
   };
 
   const handleAppleLogin = () => {
-    console.log('Login with Apple');
+    console.log("Login with Apple");
     // Implement Apple login logic here
   };
 
   const handleSSOLogin = () => {
-    console.log('Login with SSO');
+    console.log("Login with SSO");
     // Implement SSO logic here
   };
 
@@ -51,11 +50,11 @@ const Login = () => {
         </div>
         <span className="back-text">Back to Portfolio</span>
       </Link>
-     {/* Logo at the top left */}
-     <div className="navbar">
+      {/* Logo at the top left */}
+      <div className="navbar">
         <img src={logo} alt="Logo" className="logo" />
       </div>
-      
+
       {/* Main login content */}
       <div className="login-container">
         <h1>Choose your path...</h1>
@@ -65,7 +64,7 @@ const Login = () => {
           <img src={GoogleLogo} alt="Google" className="google-logo" />
           Continue with Google
         </button>
-        
+
         <button onClick={handleAppleLogin} className="login-button github">
           <img src={GithubLogo} alt="Github" className="github-logo" />
           Continue with Github
