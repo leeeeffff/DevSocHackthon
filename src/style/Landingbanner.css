@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'CsClaireMono';
+    src: url('../fonts/CsClaireMonoDemoRegular-0vdyX.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.banner {
+    background-color: #ffffff;
+    padding: 10px 0;
+    position: relative;
+    font-family: 'CsClaireMono', sans-serif;
+    margin-left: 90px;
+  }
+  
+  .banner .tagline {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: bold;
+  }
+  
+  .banner h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .banner .wrap {
+    color: #bcc796;
+  }
+
+  .highlight-green {
+    color: #bcc796;
+  }
+  
+  .banner p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 660px;
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+  
+  .banner button {
+    background-color: #bcc796
+;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .banner button:hover {
+    background-color: #ff4b4b;
+  }
+  
+  .banner img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .banner h1 {
+      font-size: 32px;
+    }
+  
+    .banner p {
+      font-size: 20px;
+      max-width: 100%;
+    }
+  
+  }
+  
+  .but {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 163px;
+    border-radius: 15px;
+    transition: all 0.3s ease; /* Smooth transition */
+    margin-top: -10px;
+    background-color: #bcc796;
+    position: relative; /* Ensures it's positioned for translation */
+    z-index: 10; /* Ensures it appears above other elements */
+}
+
+.but:hover {
+    transform: translateY(-10px); /* Moves the button up slightly */
+    background-color: #d5e0ab
+}
+

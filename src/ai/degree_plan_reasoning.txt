@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 The course plan provided is strategically designed to build a strong foundation in computer science and progress towards more advanced topics.
 
 In Term 1, students start with Programming Fundamentals, which is essential for understanding the basic principles of programming. This course serves as the starting point for students new to programming.
@@ -13,3 +14,14 @@ In Term 3, Object-Oriented Design and Programming is introduced, which requires 
 The Computer Science Project course requires Software Engineering Fundamentals and Data Structures and Algorithms to be completed, as it integrates these skills into a practical project that allows students to apply their knowledge in a real-world setting.
 
 Professional Issues and Ethics in Information Technology, also in Term 3, builds upon the culmination of students
+=======
+In the proposed course plan, the courses are strategically placed to build a strong foundation in programming, computer systems, software engineering, and data structures and algorithms, before progressing to more advanced topics such as object-oriented design and professional ethics.
+
+In Term 1, students start with Programming Fundamentals, which serves as a base for understanding programming concepts and logic. Coupled with Discrete Mathematics and Mathematics 1A, students develop a solid mathematical foundation and logical reasoning skills that are essential for advanced computer science topics.
+
+Moving to Term 2, students delve into Computer Systems Fundamentals which builds upon the Programming Fundamentals course. This is followed by Software Engineering Fundamentals which further enhances students' understanding of software development principles and practices. To complement this, Data Structures and Algorithms are introduced, providing students with essential problem-solving skills in computer science.
+
+Term 3 sees a continuation of advanced topics with Object-Oriented Design and Programming, a course that requires knowledge from Software Engineering Fundamentals and Data Structures and Algorithms. This ensures that students have a strong understanding of software design principles and can effectively implement object-oriented solutions. The Computer Science Project further applies the knowledge acquired in the previous courses to a practical project, enhancing students' project management and teamwork skills. Finally, Professional Issues and Ethics in Information Technology rounds off the program by addressing important ethical considerations and professionalism in the field of information technology.
+
+By carefully sequencing these courses, starting from foundational concepts and progressing to advanced topics, students are equipped with a comprehensive understanding of computer science
+>>>>>>> 30bcfc8 (worked on landing page)
