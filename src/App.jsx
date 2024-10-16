@@ -5,8 +5,8 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Ai from './pages/Ai';  // Import the AI page
 import SignUp from './pages/SignUp';
-import SignUp from './pages/FormPage';
-import SignUp from './pages/AboutPage';
+import FormPage from './pages/FormPage';
+import AboutPage from './pages/AboutPage';
 
 const App = () => {
   return (

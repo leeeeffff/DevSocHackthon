@@ -3,14 +3,13 @@ import '../style/SignUp.css';
 import logo from '../assets/Logo1.png';
 import GoogleLogo from '../assets/GoogleLogo.png';
 import GithubLogo from '../assets/GithubLogo.png';
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-
-  const navigate = useNavigate(); // Use for redirection
 
   // Handle input changes
   const handleInputChange = (e) => {
