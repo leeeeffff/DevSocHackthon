@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import '../style/Login.css';
-import logo from '../assets/Logo1.png';
-import GoogleLogo from '../assets/GoogleLogo.png';
-import GithubLogo from '../assets/GithubLogo.png';
-import { Link } from 'react-router-dom';
-
+import React, { useState } from "react";
+import "../style/Login.css"; // Ensure this file contains your custom styles
+import logo from "../assets/Logo1.png"; // Adjust the path based on your structure
+import GoogleLogo from "../assets/GoogleLogo.png";
+import GithubLogo from "../assets/GithubLogo.png";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -56,7 +55,7 @@ const Login = () => {
           <img src={GoogleLogo} alt="Google" className="google-logo" />
           Continue with Google
         </button>
-        
+
         <button onClick={handleAppleLogin} className="login-button github">
           <img src={GithubLogo} alt="Github" className="github-logo" />
           Continue with Github
