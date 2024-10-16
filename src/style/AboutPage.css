@@ -16,7 +16,7 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
-  color: #457B9D; /* Light Blue */
+  color: #457B9D;
 }
 
 
@@ -35,22 +35,22 @@
 }
 
 .about-image {
-  width: 650px; /* Adjust the width as needed */
+  width: 650px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-right: 20px; /* Space between image and text */
+  margin-right: 20px;
 }
 
 .image-paragraph {
   font-size: 16px;
   line-height: 1.6;
   text-align: justify;
-  flex: 1; /* This makes the text take up the remaining space */
+  flex: 1;
 }
 
 .about-section {
-  background-color: #F1FAEE; /* Soft White */
+  background-color: #F1FAEE;
   padding: 30px;
   border-radius: 10px;
   margin-top: 40px;
@@ -58,7 +58,7 @@
 
 .about-section h2 {
   font-size: 24px;
-  color: #1D3557; /* Dark Blue */
+  color: #1D3557;
   margin-bottom: 20px;
 }
 
@@ -66,7 +66,7 @@
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
-  color: #333; /* Text Grey */
+  color: #333;
 }
 
 .about-section ul {
@@ -78,14 +78,14 @@
   margin-bottom: 10px;
   font-size: 16px;
   line-height: 1.6;
-  color: #333; /* Text Grey */
+  color: #333;
 }
 
 .aboutTeam {
   font-size: 24px;
   text-align: center;
   margin-top: 50px;
-  color: #E63946; /* Red Accent */
+  color: #E63946;
 }
 
 .team-section {
@@ -111,11 +111,11 @@
 .team-member p {
   margin-top: 10px;
   font-size: 16px;
-  color: #333; /* Text Grey */
+  color: #333;
 }
 
 .join-us {
-  background-color: #A8DADC; /* Pale Blue */
+  background-color: #A8DADC;
   padding: 30px;
   margin-top: 50px;
   border-radius: 10px;
@@ -124,19 +124,19 @@
 
 .join-us h2 {
   font-size: 24px;
-  color: #1D3557; /* Dark Blue */
+  color: #1D3557;
   margin-bottom: 20px;
 }
 
 .join-us p {
   font-size: 16px;
-  color: #333; /* Text Grey */
+  color: #333;
   line-height: 1.6;
 }
 
 .join-us a {
   font-weight: bold;
-  color: #E63946; /* Red Accent */
+  color: #E63946;
   text-decoration: none;
 }
 

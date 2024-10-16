@@ -25,15 +25,11 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    console.log('Login with Google');
+    window.location.href = 'http://localhost:5000/api/auth/google';
   };
 
-  const handleAppleLogin = () => {
-    console.log('Login with Apple');
-  };
-
-  const handleSSOLogin = () => {
-    console.log('Login with SSO');
+  const handleGithubLogin = () => {
+    window.location.href = 'http://localhost:5000/api/auth/github';
   };
 
   return (
@@ -44,7 +40,7 @@ const Login = () => {
         </div>
         <span className="back-text">Back to Portfolio</span>
       </Link>
-      <div className="navbar">
+     <div className="navbar">
         <img src={logo} alt="Logo" className="logo" />
       </div>
 
@@ -57,7 +53,7 @@ const Login = () => {
           Continue with Google
         </button>
 
-        <button onClick={handleAppleLogin} className="login-button github">
+        <button onClick={handleGithubLogin} className="login-button github">
           <img src={GithubLogo} alt="Github" className="github-logo" />
           Continue with Github
         </button>
