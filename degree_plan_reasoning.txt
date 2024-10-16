@@ -1,7 +1,15 @@
-The course plan is structured to provide a solid foundation in key areas of computer science and software engineering, starting with fundamental concepts and gradually progressing to more advanced topics.
+In the proposed course plan, the progression of courses is carefully structured to build a strong foundation in computer science and progress towards advanced topics:
 
-In the first term (T1), students begin with Programming Fundamentals, which serves as the building block for understanding basic programming concepts and problem-solving techniques. This course is essential for students to develop the necessary skills to move on to more advanced topics in computer science and software engineering. Concurrently, students also take Discrete Mathematics and Mathematics 1A to lay the groundwork for mathematical reasoning and logic, which are fundamental in computer science.
+1. **Term 1 (T1)**:
+   - **Programming Fundamentals**: This course serves as the starting point for students with no prerequisites. It lays the groundwork for understanding programming concepts and basic problem-solving skills.
+   - **Discrete Mathematics**: This course introduces fundamental mathematical concepts essential for computer science, such as logic, sets, functions, and relations.
+   - **Mathematics 1A**: This course provides a solid foundation in calculus and algebra, which are necessary for understanding more advanced mathematical concepts in computer science.
 
-In the second term (T2), students delve into Computer Systems Fundamentals, which builds upon the programming knowledge acquired in Programming Fundamentals. This course provides an understanding of how computers work at a lower level, essential for understanding software development in a broader context. Software Engineering Fundamentals follows, introducing students to the principles and practices of software development. Data Structures and Algorithms complements these courses by teaching students how to organize and manipulate data efficiently, a crucial skill in programming and problem-solving.
+2. **Term 2 (T2)**:
+   - **Computer Systems Fundamentals**: Building upon the programming foundation from the previous term, this course introduces students to the inner workings of computer systems and their components.
+   - **Software Engineering Fundamentals**: This course focuses on principles and practices of software engineering, building on the programming skills acquired in the first term.
+   - **Data Structures and Algorithms**: This course introduces the fundamental data structures and algorithms used in computer science, requiring knowledge from Programming Fundamentals.
 
-In the third term (T3), students focus on Object-Oriented Design and Programming, which requires knowledge from Software Engineering Fundamentals and Data Structures and Algorithms. This course teaches students advanced programming techniques and design principles, which are essential in software development. The Computer Science Project builds upon the knowledge and skills developed in previous courses, allowing students to apply their learning to a real-world project. Professional Issues and Ethics in Information
+3. **Term 3 (T3)**:
+   - **Object-Oriented Design and Programming**: This course further advances students' programming skills by focusing on object-oriented principles and design patterns, requiring knowledge from Software Engineering Fundamentals and Data Structures and Algorithms.
+   - **Computer Science Project**: This capstone
