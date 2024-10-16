@@ -1,11 +1,11 @@
 // define authetication routes
 
 const express = require('express');
-const { loginUser } = require('../controllers/authController'); // import controller
+const { signupUser } = require('../controllers/authController'); // import controller
 
 const router = express.Router();
 
-// login route
-router.post('/login', loginUser);
+// POST request to handle user sign-up
+router.post('/signup', signupUser);
 
 module.exports = router;
