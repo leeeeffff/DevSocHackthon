@@ -41,12 +41,12 @@ const Login = () => {
         <div className="arrow-left">
           <span></span>
         </div>
-        <span className="back-text">Back to Portfolio</span>
+        <span className="back-text">Back to Home Page</span>
       </Link>
      <div className="navbar">
         <img src={logo} alt="Logo" className="logo" />
       </div>
-      
+
       <div className="login-container">
         <h1>Choose your path...</h1>
         <p>Log in to your account</p>
