@@ -17,7 +17,8 @@ const FormPage = () => {
       year2: { T1: 1, T2: 1, T3: 1, T0: 1 },
       year3: { T1: 1, T2: 1, T3: 1, T0: 1 },
       year4: { T1: 1, T2: 1, T3: 1, T0: 1 },
-    }
+    },
+    careers: [], // Step 3 career choices
   });
 
   const [currentStep, setCurrentStep] = useState(1);
@@ -50,6 +51,24 @@ const FormPage = () => {
         }
       }
     }));
+  };
+
+  const handleCheckboxChange = (e) => {
+    const { value, checked } = e.target;
+    let updatedCareers = [...formData.careers];
+
+    if (checked) {
+      if (updatedCareers.length < 3) {
+        updatedCareers.push(value);
+      }
+    } else {
+      updatedCareers = updatedCareers.filter(career => career !== value);
+    }
+
+    setFormData({
+      ...formData,
+      careers: updatedCareers
+    });
   };
 
   const handleSubmit = (e) => {
@@ -306,7 +325,6 @@ const FormPage = () => {
               </label>
             </div>
 
-            {/* Yearly course and term sliders */}
             <h2>How many courses are you planning to do each year?</h2>
             {[1, 2, 3, 4].map(year => (
               <div key={year} className="year-section">
@@ -316,7 +334,7 @@ const FormPage = () => {
                     <label>{term}</label>
                     <input
                       type="range"
-                      min={term === 'T0' ? 1 : 1}
+                      min={0} 
                       max={term === 'T0' ? 2 : 4}
                       value={formData.coursesPerYear[`year${year}`][term]}
                       onChange={(e) => handleSliderChange(e, `year${year}`, term)}
@@ -334,15 +352,50 @@ const FormPage = () => {
         </>
       )}
 
-      {currentStep === 3 && (
-        <>
-          <h1 className="title">Step 3 Placeholder</h1>
-          <p>This is where you can add more content for Step 3.</p>
-          <button className="next-button" onClick={() => alert('Form complete!')}>
-            Finish
-          </button>
-        </>
-      )}
+      {/* Step 3: Career Information */}
+        {currentStep === 3 && (
+          <>
+            <h1 className="title">Career Information</h1>
+            <form className="form-container" onSubmit={handleSubmit}>
+              <p className="description">
+                What career are you looking into? (Choose up to 3, minimum 1).
+              </p>
+
+              {[
+                "Architecture, Planning & Construction Management",
+                "Business & Commerce",
+                "Data & Technology",
+                "Education, Teaching & Social Work",
+                "Engineering",
+                "Humanities & Social Sciences",
+                "Law & Criminal Justice",
+                "Media, Design & Fine Arts",
+                "Medicine & Health Science",
+                "Science & Environment",
+              ].map((career) => (
+                <div className="checkbox-group" key={career}>
+                  <label>
+                    <input
+                      type="checkbox"
+                      name="careers"
+                      value={career}
+                      checked={formData.careers.includes(career)}
+                      onChange={handleCheckboxChange}
+                      disabled={
+                        formData.careers.length >= 3 && !formData.careers.includes(career)
+                      }
+                    />
+                    {career}
+                  </label>
+                </div>
+              ))}
+
+              <button type="submit" className="next-button" disabled={formData.careers.length < 1}>
+                Finish
+              </button>
+            </form>
+          </>
+        )}
     </div>
   );
 };
