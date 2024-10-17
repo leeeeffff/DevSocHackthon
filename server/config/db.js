@@ -1,8 +1,9 @@
 // connection to PostgreSQL db
 
-const { Pool } = require('pg');
-require('dotenv').config(); // load env variables
+import pkg from 'pg'; // Import the entire package
+import 'dotenv/config'; // ES module style import for dotenv
 
+const { Pool } = pkg; // Destructure Pool from the package
 
 // connect to db
 const pool = new Pool({
@@ -14,5 +15,4 @@ const pool = new Pool({
 });
 
 // export pool
-module.exports = pool;
-
+export default pool;
