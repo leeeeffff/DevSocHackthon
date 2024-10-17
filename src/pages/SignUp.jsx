@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import '../style/SignUp.css';
-import logo from '../assets/Logo1.png';
+import '../style/SignUp.css'; // Ensure this file contains your custom styles
+import logo from '../assets/Logo1.png'; // Adjust the path based on your structure
 import GoogleLogo from '../assets/GoogleLogo.png';
 import GithubLogo from '../assets/GithubLogo.png';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -66,10 +66,7 @@ const SignUp = () => {
 
   return (
     <div className="SignUp-page">
-      <div className="navbar">
-        <img src={logo} alt="Logo" className="logo" />
-      </div>
-
+      {/* Back to Home Link */}
       <Link to="/" className="back-arrow">
         <div className="arrow-left">
           <span></span>
@@ -130,6 +127,11 @@ const SignUp = () => {
             Continue
           </button>
         </form>
+
+        {/* Prompt for existing users */}
+        <p className="login-prompt">
+          Already have an account? <Link to="/login">Log In</Link>
+        </p>
       </div>
     </div>
   );
