@@ -27,25 +27,19 @@ const Login = () => {
     console.log('Login with Google');
   };
 
-  const handleAppleLogin = () => {
-    console.log('Login with Apple');
-  };
-
-  const handleSSOLogin = () => {
-    console.log('Login with SSO');
+  const handleGitHubLogin = () => {
+    console.log('Login with Github');
   };
 
   return (
     <div className="login-page">
+      {/* Back to Home Link */}
       <Link to="/" className="back-arrow">
         <div className="arrow-left">
           <span></span>
         </div>
         <span className="back-text">Back to Home Page</span>
       </Link>
-     <div className="navbar">
-        <img src={logo} alt="Logo" className="logo" />
-      </div>
 
       <div className="login-container">
         <h1>Choose your path...</h1>
@@ -56,15 +50,10 @@ const Login = () => {
           Continue with Google
         </button>
 
-        <button onClick={handleAppleLogin} className="login-button github">
+        <button onClick={handleGitHubLogin} className="login-button github">
           <img src={GithubLogo} alt="Github" className="github-logo" />
           Continue with Github
         </button>
-
-        {/* <button onClick={handleSSOLogin} className="login-button sso">
-          <img src="path_to_sso_icon" alt="SSO" />
-          Single sign-on (SSO)
-        </button> */}
 
         <hr className="separator" />
 
@@ -91,6 +80,11 @@ const Login = () => {
             Continue
           </button>
         </form>
+
+        {/* Prompt to sign-up page for users without an account */}
+        <p className="signup-prompt">
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </p>
       </div>
     </div>
   );
