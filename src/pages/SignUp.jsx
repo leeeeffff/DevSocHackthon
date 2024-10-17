@@ -56,12 +56,14 @@ const SignUp = () => {
     }
   };
 
+  // Redirect to the Google OAuth route
   const handleGoogleSignUp = () => {
-    console.log('SignUp with Google');
+    window.location.href = 'http://localhost:5000/api/auth/google';
   };
 
+  // Redirect to the GitHub OAuth route
   const handleGithubSignUp = () => {
-    console.log('SignUp with Github');
+    window.location.href = 'http://localhost:5000/api/auth/github';
   };
 
   return (
