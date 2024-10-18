@@ -25,7 +25,6 @@
   display: flex;
   justify-content: space-between;
   width: 700px;
-  margin-top: -120px;
   margin-bottom: 80px;
   position: relative;
 }
@@ -55,16 +54,15 @@
   position: absolute;
   top: 50%;
   left: 30px;
-  width: 320px;
+  width: 0; /* Initially 0 */
   height: 3px;
   background-color: rgb(0, 0, 0);
-  transition: background-color 0.3s ease-in-out, width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out; /* Only animate width */
 }
 
 .line.active {
-  background-color: #333;
+  width: 320px; /* Expand when active */
 }
-
 .title {
   font-size: 36px;
   font-weight: bold;
