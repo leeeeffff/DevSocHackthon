@@ -1,9 +1,0 @@
-The course plan has been structured to establish a strong foundation in fundamental concepts and skills in the first term and then progress to more advanced topics in the subsequent terms. 
-
-In the first term, students are introduced to Programming Fundamentals, which serves as the basis for understanding programming concepts. Discrete Mathematics and Mathematics 1A provide the necessary mathematical knowledge that is essential for computer science and software engineering.
-
-Moving on to the second term, Computer Systems Fundamentals and Software Engineering Fundamentals build upon the programming knowledge gained in the first term. Data Structures and Algorithms further enhance problem-solving skills and efficiency in coding.
-
-In the third term, Object-Oriented Design and Programming delve into more advanced programming principles, building upon the knowledge of Software Engineering Fundamentals and Data Structures and Algorithms. The Computer Science Project allows students to apply their skills and knowledge in a practical setting. Professional Issues and Ethics in Information Technology provide students with an understanding of ethical considerations in the field of information technology.
-
-The progression through these courses ensures that students have a solid foundation in programming, mathematics, software engineering, and computer science principles before advancing to more complex topics. Prerequisites have been carefully considered to ensure that students have the necessary knowledge and skills to succeed in each course.
