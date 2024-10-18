@@ -13,9 +13,10 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware for CORS and JSON parsing
 app.use(cors({
-    origin: 'http://localhost:5173',  // Allow requests from your frontend
-    credentials: true  // Ensure cookies (session info) are included in requests
+    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],  // Allow both localhost and 127.0.0.1
+    credentials: true  // Allow cookies and credentials
 }));
+
 app.use(express.json()); // Parse JSON info
 
 // Logging middleware to log all requests
@@ -26,9 +27,13 @@ app.use((req, res, next) => {
 
 // Session management
 app.use(session({
-    secret: 'your-secret-key',
+    secret: process.env.SESSION_SECRET || 'your-secret-key',  // Store session secret in env
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        secure: false,  // Set to true if using HTTPS, for now keep it false for local development
+        maxAge: 1000 * 60 * 60  // 1 hour session expiry
+    }
 }));
 
 // Initialize passport and handle session
