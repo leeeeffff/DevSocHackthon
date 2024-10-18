@@ -1,7 +1,6 @@
-// Define authentication routes
-import express from 'express';  // Use import for express
-import { loginUser, signupUser, storePersonalInfo } from '../controllers/authController.js';  // Import controller (include .js extension)
-import passport from 'passport';  // Import passport for OAuth handling
+import express from 'express';
+import { loginUser, signupUser, storePersonalInfo } from '../controllers/authController.js';
+import passport from 'passport';
 
 const router = express.Router();
 
@@ -17,11 +16,16 @@ router.get('/google', passport.authenticate('google', {
 }));
 
 // Google OAuth callback route
-router.get('/google/callback',
-    passport.authenticate('google', { failureRedirect: '/' }),
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
     (req, res) => {
-        // Successful authentication, redirect to dashboard or home
-        res.redirect('/dashboard');  // Adjust the redirect as needed for your app
+        if (req.user && req.user.id) {
+            // Redirect to FormPage with user ID after successful login
+            const userId = req.user.id;
+            res.redirect(`http://localhost:5173/FormPage?userId=${userId}`);
+        } else {
+            // Handle the error gracefully
+            res.redirect('/login');
+        }
     }
 );
 
@@ -31,11 +35,16 @@ router.get('/github', passport.authenticate('github', {
 }));
 
 // GitHub OAuth callback route
-router.get('/github/callback',
-    passport.authenticate('github', { failureRedirect: '/' }),
+router.get('/github/callback', passport.authenticate('github', { failureRedirect: '/' }),
     (req, res) => {
-        // Successful authentication, redirect to dashboard or home
-        res.redirect('/dashboard');  // Adjust the redirect as needed for your app
+        if (req.user && req.user.id) {
+            // Redirect to FormPage with user ID after successful login
+            const userId = req.user.id;
+            res.redirect(`http://localhost:5173/FormPage?userId=${userId}`);
+        } else {
+            // Handle the error gracefully
+            res.redirect('/login');
+        }
     }
 );
 
