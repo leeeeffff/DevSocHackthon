@@ -3,6 +3,7 @@ import '../style/Chat.css';
 import Navbaradvice from '../components/Navbaradvice';
 import Profile from '../assests/images/profile.png'; 
 import Aipic from '../assests/images/Ai.png'; 
+import Shapers from '../assests/images/shape.png'; 
 
 const Chat = () => {
   const [input, setInput] = useState('');
@@ -54,6 +55,7 @@ const Chat = () => {
         <div className='box1'/>
         <div className="chat-container">
           <div className="chat-box" ref={chatBoxRef}>
+          <image className='shapers' src = { Shapers }/>
             {messages.map((msg, index) => (
               <div key={index} className={`message-container ${msg.role}`}>
                 <img 
