@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../style/FormPage.css';
 import Nav from '../components/Signnav';
 
 const FormPage = () => {
+  const location = useLocation();
+  // Get userId from either location.state (regular sign-up) or query parameters (OAuth sign-up)
+  const userId = location.state?.userId || new URLSearchParams(location.search).get('userId');
+
+
   const [formData, setFormData] = useState({
     name: '',
     age: '',
@@ -23,6 +29,7 @@ const FormPage = () => {
   });
 
   const [currentStep, setCurrentStep] = useState(1);
+  const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -46,13 +53,37 @@ const FormPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form data:', formData);
-    if (currentStep < 3) {
-      setCurrentStep(currentStep + 1);
+    // If last step, submit the form
+    if (currentStep === 3) {
+      try {
+        const response = await fetch(`http://localhost:5000/api/auth/users/${userId}/personal-info`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Personal information saved:', data);
+          alert('Personal information saved successfully!');
+          // Redirect to the dashboard
+          window.location.href = '/dashboard';
+        } else {
+          const errorData = await response.json();
+          setError(errorData.message);
+          console.error('Error saving personal info:', errorData);
+        }
+
+      } catch (error) {
+        console.error('Error during form submission:', error);
+        setError('An error occurred. Please try again later.');
+      }
     } else {
-      alert("All steps completed!");
+      setCurrentStep(currentStep + 1);  // Go to the next step
     }
   };
 

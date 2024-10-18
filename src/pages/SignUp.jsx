@@ -3,7 +3,7 @@ import '../style/SignUp.css';
 import logo from '../assets/Logo1.png';
 import GoogleLogo from '../assets/GoogleLogo.png';
 import GithubLogo from '../assets/GithubLogo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Nav from '../components/Signnav';
 
 const SignUp = () => {
@@ -11,6 +11,7 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Navigation
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -47,6 +48,7 @@ const SignUp = () => {
       if (response.ok) {
         console.log('Sign-up successful', data);
         alert('Sign-up successful');
+        navigate(`/FormPage`, { state: { userId: data.user.id } });
       } else {
         setError(data.message);
       }

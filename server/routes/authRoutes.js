@@ -1,27 +1,14 @@
 import express from 'express';
-import passport from 'passport'; // Import passport for OAuth handling
-import { loginUser } from '../controllers/authController.js'; // Use ES module import and add .js extension
-import pool from '../config/db.js';
+import { loginUser, signupUser, storePersonalInfo } from '../controllers/authController.js';
+import passport from 'passport';
 
 const router = express.Router();
 
+// Sign up route
+router.post('/signup', signupUser);
+
 // Login route
 router.post('/login', loginUser);
-
-// Normal Signup route
-router.post('/signup', async (req, res) => {
-    const { email, password } = req.body;
-    try {
-        const newUser = await pool.query(
-            'INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *',
-            [email, password] // Make sure to hash the password using bcrypt
-        );
-        res.status(201).json({ message: 'User created', user: newUser.rows[0] });
-    } catch (error) {
-        console.error('Error during sign-up', error);
-        res.status(500).json({ message: 'Server error' });
-    }
-});
 
 // Google OAuth route
 router.get('/google', passport.authenticate('google', {
@@ -29,11 +16,16 @@ router.get('/google', passport.authenticate('google', {
 }));
 
 // Google OAuth callback route
-router.get('/google/callback',
-    passport.authenticate('google', { failureRedirect: '/' }),
+router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }),
     (req, res) => {
-        // Successful authentication, redirect to dashboard or home
-        res.redirect('/dashboard');  // Adjust the redirect as needed for your app
+        if (req.user && req.user.id) {
+            // Redirect to FormPage with user ID after successful login
+            const userId = req.user.id;
+            res.redirect(`http://localhost:5173/FormPage?userId=${userId}`);
+        } else {
+            // Handle the error gracefully
+            res.redirect('/login');
+        }
     }
 );
 
@@ -43,12 +35,20 @@ router.get('/github', passport.authenticate('github', {
 }));
 
 // GitHub OAuth callback route
-router.get('/github/callback',
-    passport.authenticate('github', { failureRedirect: '/' }),
+router.get('/github/callback', passport.authenticate('github', { failureRedirect: '/' }),
     (req, res) => {
-        // Successful authentication, redirect to dashboard or home
-        res.redirect('/dashboard');  // Adjust the redirect as needed for your app
+        if (req.user && req.user.id) {
+            // Redirect to FormPage with user ID after successful login
+            const userId = req.user.id;
+            res.redirect(`http://localhost:5173/FormPage?userId=${userId}`);
+        } else {
+            // Handle the error gracefully
+            res.redirect('/login');
+        }
     }
 );
+
+// Personal information route
+router.post('/users/:userId/personal-info', storePersonalInfo);
 
 export default router;
