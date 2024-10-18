@@ -1,8 +1,9 @@
 .profile-page {
-    padding: 40px;
     background-color: #F0F4EF;
     background: linear-gradient(0.25turn, #abbaab, #ffffff);
     min-height: 93.5vh;
+    height: calc(100vh);
+    overflow-y: auto;
   }
   
   .header {

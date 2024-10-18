@@ -1,89 +1,102 @@
 @font-face {
-  font-family: 'CsClaireMono';
-  src: url('../fonts/CsClaireMonoDemoRegular-0vdyX.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'CsClaireMono';
+    src: url('../fonts/CsClaireMonoDemoRegular-0vdyX.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #ffffff;
+    height: 60px;
+    width: 100%; 
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    font-family: 'CsClaireMono', sans-serif;
+  }
 
 
-.leftSide img {
-  height: 50px;
-}
+  .leftSide img {
+    height: 50px;
+  }
 
-.leftSide {
-  position: relative;
-  font-family: 'CsClaireMono', sans-serif;
-  font-size: 30px;
-  font-weight: bold;
-  color: #000000;
-}
+  .leftSide {
+    position: relative;
+    font-family: 'CsClaireMono', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+  }
 
 
-.rightSide {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  position: absolute;
-  left:83%;
-  top:32px;
-}
+  .rightSide {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    left:83%;
+    top:32px;
+  }
 
-.middle {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  position: absolute;
-  left:15%;
-  top:32px;
-}
+  .middle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    left:15%;
+    top:32px;
+  }
 
-.Ai {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 15px;
-  transition: all 0.5s ease; 
-  margin-top: -10px;
-  background-color: #899269;
-}
+  .Ai {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: all 0.5s ease; 
+    margin-top: -10px;
+    background-color: #899269;
+  }
 
-.Login{
-  text-decoration: none;
-  color: #000000;
-  font-size: 20px;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 15px;
-  transition: all 0.5s ease; 
-  margin-top: -10px;
+  .Login{
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: all 0.5s ease; 
+    margin-top: -10px;
 }
 
 .Signup {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 15px;
-  transition: all 0.5s ease; 
-  margin-top: -10px;
-  background-color: #bcc796; 
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: all 0.5s ease; 
+    margin-top: -10px;
+    background-color: #bcc796; 
 }
 
 .Login:hover, .Signup:hover {
-  background-color: #75756e2d; 
-  transform: translate(-10px, -10px);
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #75756e2d; 
+    transform: translate(-10px, -10px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .Signup:hover {
-  background-color: #d5e0ab;
-  transform: translate(-10px, -10px); 
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #d5e0ab;
+    transform: translate(-10px, -10px); 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .Ai:hover {
-  background-color: #BFCC94; 
+    background-color: #BFCC94; 
 }
