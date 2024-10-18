@@ -7,7 +7,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Embedding, LSTM, Dense
 
 openai.api_key = "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"
-
+# hello
 core_courses_prerequisites = {
     "COMP1511": {"prerequisite": []},
     "COMP1521": {"prerequisite": ["COMP1511"]},

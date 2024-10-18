@@ -87,7 +87,8 @@
   .button-group {
     display: flex;
     align-items: center;
-    gap: 20px; /* Space between button and text */
+    gap: 20px; 
+    margin-left: -630px;
   }
   
   /* Styling for the buttons */
