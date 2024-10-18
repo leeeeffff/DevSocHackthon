@@ -20,7 +20,7 @@ passport.use(new GoogleStrategy({
     callbackURL: '/api/auth/google/callback'
 }, async (accessToken, refreshToken, profile, done) => {
     try {
-        await oauthLogin(profile, done);
+        await oauthLogin(profile, done, 'google');
     } catch (error) {
         done(error);
     }
@@ -33,7 +33,8 @@ passport.use(new GitHubStrategy({
     callbackURL: '/api/auth/github/callback'
 }, async (accessToken, refreshToken, profile, done) => {
     try {
-        await oauthLogin(profile, done);
+        profile._json.access_token = accessToken;  // Pass the access token for later use
+        await oauthLogin(profile, done, 'github');
     } catch (error) {
         done(error);
     }

@@ -1,26 +1,26 @@
 @font-face {
-    font-family: 'CsClaireMono';
-    src: url('../fonts/CsClaireMonoDemoRegular-0vdyX.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'CsClaireMono';
+  src: url('../fonts/CsClaireMonoDemoRegular-0vdyX.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    background-color: #ffffff;
-    height: 60px;
-    width: 100%; 
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    font-family: 'CsClaireMono', sans-serif;
-    background-color: transparent; /* Transparent background */
-    box-shadow: none; /* Ensure no box-shadow is applied */
-    border: none; 
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  height: 60px;
+  width: 100%; 
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-family: 'CsClaireMono', sans-serif;
+  background-color: transparent; /* Transparent background */
+  box-shadow: none; /* Ensure no box-shadow is applied */
+  border: none; 
+}
 
 
   .profile-container {
