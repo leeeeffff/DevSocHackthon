@@ -1,187 +1,216 @@
 /* Navbar styling */
-/* Navbar styling */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    width: 100%;
-    background-color: transparent; /* Set to transparent or white */
-  }
-  
-  .logo {
-    height: 40px; /* Adjust height based on how large you want the logo */
-    width: auto;  /* Keep the aspect ratio intact */
-    display: block; /* Ensures the logo is displayed as a block element */
-  }
+@font-face {
+  font-family: 'CsClaireMono';
+  src: url('../fonts/CsClaireMonoDemoRegular-0vdyX.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  .google-logo {
-    height: 20px;
-    width: auto;
-  }
+.logo {
+  height: 40px;
+  width: auto;
+}
 
-  .github-logo {
-    height: 20px;
-    width: auto;
-  }
-   
-  /* Styling for the login page */
-  .login-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #fff;
-    padding-top: 80px; /* Padding to avoid overlap with the navbar */
-  }
-  
-  .login-container {
-    width: 400px;
-    padding: 30px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    text-align: center;
-    margin-top: 50px;
-  }
-  .login-container h1 {
-    font-size: 24px;
-    font-weight: 700;
-  }
-  
-  .login-container p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #666;
-  }
-  
-  .login-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .separator {
-    border: none;          /* Remove default border */
-    border-top: 1px solid black;  /* Create a thin black line */
-    margin: 20px 0;        /* Add some spacing around the line */
-    width: 100%;           /* Make it span the full width */
-  }
+.google-logo {
+  height: 20px;
+  width: auto;
+}
 
-  .login-button img {
-    margin-right: 10px;
-  }
-  
-  .email-label {
-    color: grey;
-    margin-top : 30px;
-    display: flex;
-    justify-content: flex-start;
-  }
-  .google {
-    background-color: white;
-  }
-  
-  .github {
-    background-color: white;
-    color: hsl(180, 60%, 10%);
-  }
-  
-  .sso {
-    background-color: white;
-  }
-  
-  input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin: 15px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  .continue-button {
-    width: 422px;
-    padding: 10px;
-    background-color:  #344966;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .continue-button:hover {
-    background-color: #0D1821;
-    size: 20px;
-  }
-  
-  small {
-    display: block;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #999;
-  }
+.github-logo {
+  height: 20px;
+  width: auto;
+}
 
-  back-arrow {
-    position: fixed; 
-    top: 20px; 
-    left: 30px; 
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    overflow: hidden;
-    z-index: 1000; 
-  }
+/* Styling for the login page */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 93.5vh; /* Full height */
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #a7b65c);
+  padding-top: 60px; /* Reduced padding for alignment with navbar */
+}
 
-  .back-arrow {
-    margin-right: 1200px;
-    margin-bottom: 130px;
-  }
+.login-container {
+  width: 450px;
+  padding: 40px;
+  background: linear-gradient(0.25turn, #ffffff, #ffffff);
+  text-align: center;
+  border-radius: 10px; /* Smooth rounded corners */
+  margin-top: 0px; /* Set to 0 to minimize top spacing */
+  margin-bottom: 20px; /* Reduced margin below the box */
+  box-shadow: 60px 60px 100px rgba(0, 0, 0, 0.8);
+}
 
-  .arrow-left {
-    display: inline-block;
-  }
+.login-container h1 {
+  font-size: 28px; /* Make heading consistent */
+  font-weight: bold;
+  color: #8d917f; /* Darker text color */
+  margin-bottom: 20px;
+  font-family: 'CsClaireMono', sans-serif;
+}
 
-  .arrow-left span {
-    display: block;
-    width: 20px;
-    height: 25px;
-    border-top: 2px solid #333;
-    border-left: 2px solid #333;
-    transform: rotate(-45deg);
-    margin-top: 90px; 
-    margin-left: 30px;
-    transition: box-shadow 0.3s ease;
-    position: relative;
-  }
+.login-container p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #8d917f;
+  font-family: 'CsClaireMono', sans-serif;
+}
 
-  .back-text {
-    text-decoration: none;
-    color: black;
-    font-size: 1.4rem;
-    margin-left: 10px;
-    margin-top: 90px;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    white-space: nowrap;
-    font-family: 'BemirsDemo', sans-serif;
-    font-weight: bold;
-    position: relative;
-  }
+.login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px; /* More rounded corners */
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.5s ease;
+  font-family: 'CsClaireMono', sans-serif;
+}
 
-  .back-arrow:hover .back-text {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.login-button:hover {
+  transform: translate(-10px, -10px); 
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
 
-  .back-arrow:hover .arrow-left span {
-    border-color: #555555;
-  }
+.separator {
+  border: none;
+  border-top: 1px solid #ccc; /* Light separator color */
+  margin: 25px 0;
+  width: 100%;
+}
+
+.login-button img {
+  margin-right: 10px;
+}
+
+.email-label,
+.password-label {
+  color: #8d917f;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px; /* More rounded corners */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border: 1px solid #344966; /* Focus border color */
+}
+
+.continue-button:hover {
+  background-color: #0d1821;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: 'CsClaireMono', sans-serif;
+}
+
+.signup-prompt {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 20px;
+  font-family: 'CsClaireMono', sans-serif;
+}
+
+.signup-prompt a {
+  color: #bcc796;
+  font-weight: bold;
+  border-radius: 2px;
+  background-color: #bcc796;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for the color change */
+}
+
+.signup-prompt a:hover {
+  color: #d5e0ab; /* White color on hover */
+  opacity: 50%;
+}
+
+.back-arrow {
+  position: fixed; 
+  top: 20px; 
+  left: 30px; 
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  overflow: hidden;
+  z-index: 1000; 
+}
+
+.back-arrow {
+  margin-bottom: 0;
+}
+
+.arrow-left {
+  display: inline-block;
+}
+
+.arrow-left span {
+  display: block;
+  width: 20px;
+  height: 25px;
+  border-top: 2px solid #333;
+  border-left: 2px solid #333;
+  transform: rotate(-45deg);
+  margin-top: 90px; 
+  margin-left: 30px;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.back-text {
+  font-size: 1.4rem;
+  margin-left: 10px;
+  margin-top: 90px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+  font-family: 'CsClaireMono', sans-serif;
+  font-weight: bold;
+  position: relative;
+}
+
+.back-arrow:hover .back-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.back-arrow:hover .arrow-left span {
+  border-color: #555555;
+}
+
+.lol {
+  text-decoration: none;
+  width: 100%; /* Full width */
+  padding: 5px;
+  background-color: #bcc796;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.5s ease; 
+  font-family: 'CsClaireMono', sans-serif;
+}

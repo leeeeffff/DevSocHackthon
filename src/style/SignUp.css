@@ -1,133 +1,170 @@
 /* Navbar styling */
-/* Navbar styling */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    width: 100%;
-    background-color: transparent; /* Set to transparent or white */
-  }
-  
-  .logo {
-    height: 40px; /* Adjust height based on how large you want the logo */
-    width: auto;  /* Keep the aspect ratio intact */
-    display: block; /* Ensures the logo is displayed as a block element */
-  }
 
-  .google-logo {
-    height: 20px;
-    width: auto;
-  }
+.logo {
+  height: 40px;
+  width: auto;
+}
 
-  .github-logo {
-    height: 20px;
-    width: auto;
-  }
-   
-  /* Styling for the SignUp page */
-  .SignUp-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #fff;
-    padding-top: 80px; /* Padding to avoid overlap with the navbar */
-  }
-  
-  .SignUp-container {
-    width: 400px;
-    padding: 30px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    text-align: center;
-    margin-top: 50px;
-  }
-  .SignUp-container h1 {
-    font-size: 24px;
-    font-weight: 700;
-  }
-  
-  .SignUp-container p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #666;
-  }
-  
-  .SignUp-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .separator {
-    border: none;          /* Remove default border */
-    border-top: 1px solid black;  /* Create a thin black line */
-    margin: 20px 0;        /* Add some spacing around the line */
-    width: 100%;           /* Make it span the full width */
-  }
+.google-logo {
+  height: 20px;
+  width: auto;
+}
 
-  .SignUp-button img {
-    margin-right: 10px;
-  }
-  
-  .email-label, 
-  .password-label,
-  .confirm-password-label {
-    color: grey;
-    margin-top : 10px;
-    display: flex;
-    justify-content: flex-start;
-  }
-  .google {
-    background-color: white;
-  }
-  
-  .github {
-    background-color: white;
-    color: hsl(180, 60%, 10%);
-  }
-  
-  .sso {
-    background-color: white;
-  }
-  
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 15px 0;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box; /* Ensures padding doesn't affect the width */
-  }
-  
-  .continue-button {
-    width: 422px;
-    padding: 10px;
-    background-color:  #344966;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .continue-button:hover {
-    background-color: #0D1821;
-    size: 20px;
-  }
-  
-  small {
-    display: block;
-    margin-top: 20px;
-    font-size: 12px;
-    color: #999;
-  }
+.github-logo {
+  height: 20px;
+  width: auto;
+}
+
+/* Styling for the SignUp page */
+.SignUp-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 93.5vh; /* Ensure it takes full height of the screen */
+  background: linear-gradient(0.25turn, #C8A2C8, #ebf8e1, #a7b65c);
+  padding-top: 60px; /* Reduced padding to move the form up */
+}
+
+.SignUp-container {
+  width: 450px;
+  padding: 40px;
+  background: linear-gradient(0.25turn, #ffffff, #ffffff);
+  text-align: center;
+  border-radius: 10px; /* Smooth rounded corners */
+  margin-top: 0px; /* Set to 0 to minimize top spacing */
+  margin-bottom: 20px; /* Reduced margin below the box */
+  box-shadow: 60px 60px 100px rgba(0, 0, 0, 0.8);
+
+}
+
+.SignUp-container h1 {
+  font-size: 28px; /* Increased for better focus */
+  font-weight: bold;
+  color: #8d917f; /* Darker text color */
+  margin-bottom: 20px;
+  font-family: 'CsClaireMono', sans-serif;
+}
+
+.SignUp-container p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #8d917f;
+  font-family: 'CsClaireMono', sans-serif;
+}
+
+.SignUp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px; /* More rounded corners */
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.5s ease;
+  font-family: 'CsClaireMono', sans-serif;
+}
+
+.SignUp-button:hover {
+  transform: translate(-10px, -10px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.separator {
+  border: none;
+  border-top: 1px solid #ccc; /* Light separator color */
+  margin: 25px 0;
+  width: 100%;
+}
+
+.SignUp-button img {
+  margin-right: 10px;
+}
+
+.email-label,
+.password-label,
+.confirm-password-label {
+  color: #8d917f;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px; /* Increased padding for more spacing */
+  margin: 15px 0; /* Add space between the boxes */
+  border-radius: 10px; /* Increase the border radius for a smoother look */
+  border: 1px solid #ccc;
+  background-color: #f9f9f9; /* Light background to make them stand out */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover and focus effects */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border: 1px solid #344966; /* Darker border on focus */
+  background-color: #ffffff; /* Make the background white on focus */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on focus */
+  outline: none; /* Remove default outline for a cleaner look */
+}
+
+input::placeholder {
+  color: #b0b0b0; /* Lighter color for placeholders */
+  font-style: italic; /* Italic style for the placeholder text */
+}
+
+.continue-button {
+  width: 100%; /* Full width */
+  padding: 12px;
+  background-color: #bcc796;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.continue-button:hover {
+  background-color: #d5e0ab;
+  transform: translate(-5px, -5px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: 'CsClaireMono', sans-serif;
+}
+
+.login-prompt {
+  font-size: 14px;
+  color: #ffffff;
+  margin-top: 20px;
+  border-radius: 2px;
+  font-family: 'CsClaireMono', sans-serif;
+}
+
+.login-prompt a {
+  color: white;
+  background-color: #bcc796;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 14px;
+  margin-top: 20px;
+  font-weight: bold;
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease;
+  display: inline-block; /* Ensures padding and background are applied correctly */
+}
+
+.login-prompt a:hover {
+  background-color: #d5e0ab;
+  opacity: 50%;
+}
