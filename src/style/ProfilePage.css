@@ -1,0 +1,170 @@
+.profile-page {
+    padding: 40px;
+    background-color: #F0F4EF;
+    background: linear-gradient(0.25turn, #abbaab, #ffffff);
+    min-height: 93.5vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-top: 120px;
+    line-height: 9px;
+  }
+  
+  .profile-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .user-info {
+    flex-grow: 1;
+
+  }
+  .user-info h3 {
+    margin-bottom:0px; 
+  }
+
+  .user-info p {
+    margin-top: 2px;
+  }
+  
+  
+  .edit-button {
+    background-color: #BFCC94;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #d5e0ab;
+    transform: translate(-10px, -10px); 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .form-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .email-section {
+    background-color: #F0F4EF;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+  }
+  
+  .change-email-button {
+    background-color: #BFCC94;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+  }
+
+  /* Ensure all input fields are the same width */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box; /* Ensures padding is included in width calculations */
+    font-size: 16px; /* Keep the font size consistent */
+}
+
+/* Flex container for the fields in the same row */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between the fields */
+}
+
+/* Ensures both fields in a row take equal space */
+.flex-container > div {
+    flex: 1; /* Each takes equal width */
+}
+
+/* Button alignment */
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.career-select {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  /* DEMO-SPECIFIC STYLES */
+  .typing-animation {
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.8); /* Initially slightly smaller */
+    animation: fadeInScale 1.5s ease-in-out forwards; /* Apply animation */
+    font-size: 0.9em; /* Adjust font size as needed */
+    color: #333; /* Adjust color */
+    font-weight: bold;
+  }
+  
+  /* Keyframes for fade-in and scale effect */
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }

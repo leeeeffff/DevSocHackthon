@@ -58,48 +58,48 @@ const FormPage = () => {
 
   return (
     <div>
-      <Nav/>
-    <div className="form-page">
-      <div className="steps-container">
-        <div className="step-wrapper">
-          <div className={`step ${currentStep >= 1 ? 'active' : ''}`}></div>
-          <div className={`line ${currentStep >= 2 ? 'active' : ''}`}></div>
+      <Nav />
+      <div className="form-page">
+        <div className="steps-container">
+          <div className="step-wrapper">
+            <div className={`step ${currentStep >= 1 ? 'active' : ''}`}></div>
+            <div className={`line ${currentStep >= 2 ? 'active' : ''}`}></div>
+          </div>
+          <div className="step-wrapper">
+            <div className={`step ${currentStep >= 2 ? 'active' : ''}`}></div>
+            <div className={`line ${currentStep >= 3 ? 'active' : ''}`}></div>
+          </div>
+          <div className="step-wrapper">
+            <div className={`step ${currentStep >= 3 ? 'active' : ''}`}></div>
+          </div>
         </div>
-        <div className="step-wrapper">
-          <div className={`step ${currentStep >= 2 ? 'active' : ''}`}></div>
-          <div className={`line ${currentStep >= 3 ? 'active' : ''}`}></div>
-        </div>
-        <div className="step-wrapper">
-          <div className={`step ${currentStep >= 3 ? 'active' : ''}`}></div>
-        </div>
-      </div>
 
-      {/* Step 1: Personal Information */}
-      {currentStep === 1 && (
-        <>
-          <h1 className="title">Personal Information</h1>
-          <form className="form-container" onSubmit={handleSubmit}>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              placeholder="Enter your name"
-              required
-            />
+        {/* Step 1: Personal Information */}
+        {currentStep === 1 && (
+          <>
+            <h1 className="title">Personal Information</h1>
+            <form className="form-container" onSubmit={handleSubmit}>
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                placeholder="Enter your name"
+                required
+              />
 
-            <label htmlFor="age">Age</label>
-            <input
-              type="number"
-              id="age"
-              name="age"
-              value={formData.age}
-              onChange={handleInputChange}
-              placeholder="Enter your age"
-              required
-            />
+              <label htmlFor="age">Age</label>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                value={formData.age}
+                onChange={handleInputChange}
+                placeholder="Enter your age"
+                required
+              />
 
             <p className="form-label">What type of student are you?</p>
             <div className="button-group">
@@ -133,12 +133,12 @@ const FormPage = () => {
               <option value="others">Others</option>
             </select>
 
-            <button type="submit" className="next-button">
-              Next
-            </button>
-          </form>
-        </>
-      )}
+              <button type="submit" className="next-button">
+                Next
+              </button>
+            </form>
+          </>
+        )}
 
       {/* Step 2: University Information */}
       {currentStep === 2 && (
@@ -210,18 +210,18 @@ const FormPage = () => {
                   <option value="Security Engineering">Security Engineering</option>
                 </select>
 
-                <label htmlFor="coursesDone">What courses have you done?</label>
-                <input
-                  type="text"
-                  id="coursesDone"
-                  name="coursesDone"
-                  value={formData.coursesDone}
-                  onChange={handleInputChange}
-                  placeholder="Enter your courses"
-                  required
-                />
-              </>
-            )}
+                  <label htmlFor="coursesDone">What courses have you done?</label>
+                  <input
+                    type="text"
+                    id="coursesDone"
+                    name="coursesDone"
+                    value={formData.coursesDone}
+                    onChange={handleInputChange}
+                    placeholder="Enter your courses"
+                    required
+                  />
+                </>
+              )}
 
             <p className="form-label">Click on the years you are planning to do summer term</p>
             <div className="button-group">
@@ -257,12 +257,12 @@ const FormPage = () => {
               </div>
             ))}
 
-            <button type="submit" className="next-button">
-              Next
-            </button>
-          </form>
-        </>
-      )}
+              <button type="submit" className="next-button">
+                Next
+              </button>
+            </form>
+          </>
+        )}
 
       {/* Step 3: Career Information */}
       {currentStep === 3 && (
@@ -315,5 +315,4 @@ const FormPage = () => {
     </div>
   );
 };
-
 export default FormPage;
