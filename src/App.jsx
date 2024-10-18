@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import FormPage from './pages/FormPage';
 import AboutPage from './pages/AboutPage';
 import ProfilePage from './pages/ProfilePage';
+import Settings from './pages/Settings';
 import Chat from './pages/Chat';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/Chat" exact Component={ Chat } />
           <Route path="/FormPage" exact Component={ FormPage } />
           <Route path="/ProfilePage" exact Component={ ProfilePage } />
+          <Route path="/Settings" exact Component={ Settings } />
         </Routes>
       </Router>
     </div>
