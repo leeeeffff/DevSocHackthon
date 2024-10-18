@@ -73,6 +73,18 @@ html, body {
   margin: 10px 0;
 }
 
+.shapers {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80px;
+  width: auto;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease; /* Smooth fading */
+}
+
 .message-container.user {
   justify-content: flex-end;
 }
