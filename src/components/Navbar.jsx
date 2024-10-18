@@ -5,19 +5,17 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
+    <div className='na'>
     <div className='navbar'>
       <div className='leftSide'>
         <img src={Logo} alt="Logo" />
         Pathways
       </div>
-      {/* Uncomment the below if needed */}
-      {/* <div className='middle'>
-        <Link to="/Ai" className='Ai'>Check the AI out</Link>
-      </div> */}
       <div className='rightSide'>
         <Link to="/login" className='Login'>Login</Link>
         <Link to="/signup" className='Signup'>Sign up</Link>
       </div>
+    </div>
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import '../style/Chat.css'; // Make sure this file exists
+import '../style/Chat.css'; 
 import Navbaradvice from '../components/Navbaradvice';
-import Profile from '../assests/images/profile.png'; // Profile image import
+import Profile from '../assests/images/profile.png'; 
+import Aipic from '../assests/images/Ai.png'; 
 
 const Chat = () => {
   const [input, setInput] = useState('');
@@ -27,6 +28,9 @@ const Chat = () => {
       if (data.response) {
         const aiMessage = { role: 'ai', content: data.response };
         setMessages((prevMessages) => [...prevMessages, aiMessage]); // Add AI response
+      } else if (data.error) {
+        const errorMessage = { role: 'ai', content: `Error: ${data.error}` };
+        setMessages((prevMessages) => [...prevMessages, errorMessage]);
       }
     } catch (error) {
       console.error('Error fetching AI response:', error);
@@ -42,12 +46,12 @@ const Chat = () => {
         <div className="chat-box">
           {messages.map((msg, index) => (
             <div key={index} className={`message-container ${msg.role}`}>
-              {msg.role === 'user' && (
-                <img src={Profile} alt="User" className="profile-pic" />
-              )}
-              <div className={`message ${msg.role}`}>
-                {msg.content}
-              </div>
+              <img 
+                src={msg.role === 'user' ? Profile : Aipic} 
+                alt={msg.role === 'user' ? 'User' : 'AI'} 
+                className={msg.role === 'user' ? 'profile-pic-user' : 'profile-pic-ai'} 
+              />
+              <div className={`message ${msg.role}`}>{msg.content}</div>
             </div>
           ))}
         </div>

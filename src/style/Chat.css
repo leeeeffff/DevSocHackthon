@@ -1,3 +1,4 @@
+/* Chat Container */
 .chat-container {
   display: flex;
   flex-direction: column;
@@ -37,13 +38,22 @@
   justify-content: flex-start;
 }
 
-/* Profile Picture */
-.profile-pic {
+/* Profile Picture for User */
+.profile-pic-user {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
   animation: slideIn 1s ease-in-out forwards;
+}
+
+/* Profile Picture for AI */
+.profile-pic-ai {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: slideInFromLeft 1s ease-in-out forwards;
 }
 
 /* Message Styles */
@@ -61,6 +71,7 @@
 
 .message.ai {
   background-color: #bcc796;
+  animation: slideInFromLeft 1s ease-in-out forwards;
 }
 
 /* Input Container */
@@ -97,18 +108,33 @@
   background-color: #a0b06f;
 }
 
-
+/* Slide Animations */
 @keyframes slideIn {
   0% {
-      transform: translateX(1000px);
-      opacity: 0;
+    transform: translateX(1000px);
+    opacity: 0;
   }
   70% {
-      transform: translateX(-100px);
-      opacity: 1;
+    transform: translateX(-100px);
+    opacity: 1;
   }
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

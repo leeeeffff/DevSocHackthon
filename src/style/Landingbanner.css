@@ -6,7 +6,7 @@
 }
 
 .banner {
-    background-color: #ffffff;
+  background: transparent;
     padding: 10px 0;
     position: relative;
     font-family: 'CsClaireMono', sans-serif;

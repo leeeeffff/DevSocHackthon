@@ -7,15 +7,13 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setDropdownOpen((prev) => !prev);
-  };
-
   return (
     <div className='navbar'>
       <div className='leftSide'>
-        <img src={Logo} alt="Logo" />
-        Pathways
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <img src={Logo} alt="Logo" />
+          Pathways
+        </Link>
       </div>
 
       <div className='rightSide'>

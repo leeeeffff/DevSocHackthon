@@ -1,0 +1,9 @@
+The course plan is designed to provide a structured progression from foundational knowledge to advanced topics in computer science and software engineering. 
+
+In Term 1, students start with Programming Fundamentals, which serves as the basis for understanding programming concepts and logic. This course is foundational and sets the stage for the rest of the program. Discrete Mathematics and Mathematics 1A are also introduced in this term to establish a strong mathematical background essential for computer science.
+
+Moving on to Term 2, students delve into Computer Systems Fundamentals, Software Engineering Fundamentals, and Data Structures and Algorithms. These courses build upon the programming skills acquired in Term 1. Computer Systems Fundamentals and Software Engineering Fundamentals deepen the understanding of how software interacts with hardware and the principles of software development. Data Structures and Algorithms enhance problem-solving abilities and algorithmic thinking, key skills in computer science.
+
+In Term 3, students progress to Object-Oriented Design and Programming, which requires prior knowledge from Software Engineering Fundamentals and Data Structures and Algorithms. This course focuses on advanced programming concepts and design principles. The Computer Science Project further integrates the skills learned throughout the program, emphasizing practical application and project management. Finally, Professional Issues and Ethics in Information Technology addresses the ethical and societal responsibilities of computer scientists and software engineers, tying together technical knowledge with ethical considerations.
+
+Overall, this course plan ensures a systematic progression from foundational concepts to advanced topics, with each term building upon the knowledge and skills acquired in the preceding terms. It culminates in a

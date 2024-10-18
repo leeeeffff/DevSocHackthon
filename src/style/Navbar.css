@@ -5,14 +5,18 @@
     font-style: normal;
 }
 
+.na {
+  background-color: transparent; /* Set the background to transparent */
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    background-color: #ffffff;
     height: 60px;
     width: 100%; 
+    background-color: transparent;
     position: fixed;
     top: 0;
     z-index: 1000;
