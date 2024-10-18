@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../style/Ai.css'; // Import the CSS file
 import Navbaradvice from '../components/Navbaradvice';
+import Shapew from '../assests/images/shape2.png'
 
 const Ai = () => {
   const [coursePlan, setCoursePlan] = useState(null);
@@ -29,7 +30,7 @@ const Ai = () => {
     <div className="ai-container">
       <h1>AI Degree Planner</h1>
       <button className="run-ai-button" onClick={runAiHandler}>
-        Run AI
+        <img className = 'shape_img1' src = {Shapew}></img>
       </button>
 
       {coursePlan && (

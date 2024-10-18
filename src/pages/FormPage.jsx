@@ -36,6 +36,10 @@ const FormPage = () => {
     });
   };
 
+  const handleGenderChange = (gender) => {
+    setFormData({ ...formData, gender });
+  };
+
   const handleRadioChange = (e) => {
     const { name, value } = e.target;
     setFormData({

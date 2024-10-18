@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../style/Chat.css'; 
 import Navbaradvice from '../components/Navbaradvice';
 import Profile from '../assests/images/profile.png'; 
@@ -7,6 +7,7 @@ import Aipic from '../assests/images/Ai.png';
 const Chat = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
+  const chatBoxRef = useRef(null); // Reference to chat box
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -39,35 +40,44 @@ const Chat = () => {
     }
   };
 
+  // Scroll to the bottom whenever messages are updated
+  useEffect(() => {
+    if (chatBoxRef.current) {
+      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <div>
       <Navbaradvice />
-      <div className="chat-container">
-        <div className="chat-box">
-          {messages.map((msg, index) => (
-            <div key={index} className={`message-container ${msg.role}`}>
-              <img 
-                src={msg.role === 'user' ? Profile : Aipic} 
-                alt={msg.role === 'user' ? 'User' : 'AI'} 
-                className={msg.role === 'user' ? 'profile-pic-user' : 'profile-pic-ai'} 
-              />
-              <div className={`message ${msg.role}`}>{msg.content}</div>
-            </div>
-          ))}
-        </div>
+        <div className='box'/>
+        <div className='box1'/>
+        <div className="chat-container">
+          <div className="chat-box" ref={chatBoxRef}>
+            {messages.map((msg, index) => (
+              <div key={index} className={`message-container ${msg.role}`}>
+                <img 
+                  src={msg.role === 'user' ? Profile : Aipic} 
+                  alt={msg.role === 'user' ? 'User' : 'AI'} 
+                  className={msg.role === 'user' ? 'profile-pic-user' : 'profile-pic-ai'} 
+                />
+                <div className={`message ${msg.role}`}>{msg.content}</div>
+              </div>
+            ))}
+          </div>
 
-        <form onSubmit={handleSend} className="chat-input-container">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask me anything..."
-            className="chat-input"
-          />
-          <button type="submit" className="chat-send-button">Send</button>
-        </form>
+          <form onSubmit={handleSend} className="chat-input-container">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Ask me anything..."
+              className="chat-input"
+            />
+            <button type="submit" className="chat-send-button">Send</button>
+          </form>
+        </div>
       </div>
-    </div>
   );
 };
 
