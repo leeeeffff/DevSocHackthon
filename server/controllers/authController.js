@@ -68,3 +68,55 @@ export const loginUser = async (req, res) => {
   }
 };
 
+// Handle update personal info into db
+export const storePersonalInfo = async (req, res) => {
+  const { userId } = req.params;
+  const {
+    name,
+    age,
+    studentType,
+    gender,
+    isCurrentStudent,
+    yearIn,
+    major,
+    coursesDone,
+    summerTerm,
+    coursesPerYear,
+    careers,
+  } = req.body;
+  try {
+    // Convert `coursesDone` into PostgreSQL array format with each element properly quoted
+    const coursesDoneArray = `{${coursesDone.split(',').map(course => `"${course.trim()}"`).join(',')}}`;
+
+    // Ensure `coursesPerYear` is stored as JSON (since it's a nested object)
+    const coursesPerYearJson = JSON.stringify(coursesPerYear);
+
+    // Convert `careers` into PostgreSQL array format with proper quoting
+    const careersArray = `{${careers.map(career => `"${career.trim()}"`).join(',')}}`;
+
+    // Convert `summerTermAArray` into PostgreSQL array format with proper quoting
+    const summerTermArray = `{${summerTerm.split(',').map(term => term.trim()).join(',')}}`;
+
+
+    // Insert personal info into the database
+    const result = await pool.query(
+      `INSERT INTO personal_info (
+        user_id, name, age, domestic_international, gender, current_student,
+        year_in, major, courses_done, summer_term, courses_per_term, career_options
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *`,
+      [
+        userId, name, age, studentType, gender, isCurrentStudent,
+        yearIn, major, coursesDoneArray, summerTermArray, coursesPerYearJson, careersArray
+      ]
+    );
+
+    // Send the inserted data back as a response
+    res.status(201).json({
+      message: 'Personal info saved successfully',
+      personalInfo: result.rows[0],
+    });
+  } catch (error) {
+    console.error('Error saving personal info:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
