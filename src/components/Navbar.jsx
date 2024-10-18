@@ -8,12 +8,15 @@ const Navbar = () => {
     <div className='na'>
     <div className='navbar'>
       <div className='leftSide'>
-        <img src={Logo} alt="Logo" />
-        Pathways
+        <Link to="/" className='logoLink'>
+          <img src={Logo} alt="Logo" />
+          Pathways
+        </Link>
       </div>
       <div className='rightSide'>
+        <Link to="/AboutPage" className='AboutPage'>About us</Link>
         <Link to="/login" className='Login'>Login</Link>
-        <Link to="/signup" className='Signup'>Sign up</Link>
+        <Link to="/SignUp" className='Signup'>Sign up</Link>
       </div>
     </div>
     </div>

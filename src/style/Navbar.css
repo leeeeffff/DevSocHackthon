@@ -15,8 +15,7 @@
     align-items: center;
     padding: 10px 30px;
     height: 60px;
-    width: 100%; 
-    background-color: transparent;
+    width: 100%;
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -62,7 +61,7 @@
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 15px;
-    transition: all 0.5s ease; 
+    transition: all 0.5s ease;
     margin-top: -10px;
     background-color: #899269;
   }
@@ -74,7 +73,7 @@
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 15px;
-    transition: all 0.5s ease; 
+    transition: all 0.5s ease;
     margin-top: -10px;
 }
 
@@ -84,23 +83,41 @@
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 15px;
-    transition: all 0.5s ease; 
+    transition: all 0.5s ease;
     margin-top: -10px;
-    background-color: #bcc796; 
+    background-color: #bcc796;
 }
 
 .Login:hover, .Signup:hover {
-    background-color: #75756e2d; 
+    background-color: #75756e2d;
     transform: translate(-10px, -10px);
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .Signup:hover {
     background-color: #d5e0ab;
-    transform: translate(-10px, -10px); 
+    transform: translate(-10px, -10px);
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .Ai:hover {
-    background-color: #BFCC94; 
+    background-color: #BFCC94;
+}
+
+.AboutPage {
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 15px;
+  background-color: #f0f0f0;
+  transition: all 0.5s ease;
+  margin-top: -10px;
+}
+
+.AboutPage:hover {
+  background-color: #75756e2d;
+  transform: translate(-10px, -10px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }

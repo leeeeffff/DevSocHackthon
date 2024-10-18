@@ -26,9 +26,9 @@ export const Landingbanner = () => {
     setText(updatedText);
 
     if (isDeleting) {
-        setDelta(100); 
+        setDelta(100);
     } else {
-        setDelta(200 - Math.random() * 100); 
+        setDelta(200 - Math.random() * 100);
     }
 
     if (!isDeleting && updatedText === fullText) {

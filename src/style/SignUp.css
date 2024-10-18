@@ -1,0 +1,157 @@
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  width: 100%;
+  background-color: white; /* Set a solid background color to stand out */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Add shadow for a floating effect */
+  z-index: 100; /* Make sure the navbar stays above other elements */
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.google-logo {
+  height: 20px;
+  width: auto;
+}
+
+.github-logo {
+  height: 20px;
+  width: auto;
+}
+
+/* Styling for the SignUp page */
+.SignUp-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes full height of the screen */
+  background-color: #F0F4EF; /* Light background for the page */
+  padding-top: 60px; /* Reduced padding to move the form up */
+}
+
+.SignUp-container {
+  width: 450px;
+  padding: 40px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  background-color: white;
+  text-align: center;
+  border-radius: 10px; /* Smooth rounded corners */
+  border: 1px solid #ccc; /* Add a consistent border around the box */
+  margin-top: 0px; /* Set to 0 to minimize top spacing */
+  margin-bottom: 20px; /* Reduced margin below the box */
+}
+
+.SignUp-container h1 {
+  font-size: 28px; /* Increased for better focus */
+  font-weight: bold;
+  color: #344966; /* Darker text color */
+  margin-bottom: 20px;
+}
+
+.SignUp-container p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #666;
+}
+
+.SignUp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px; /* More rounded corners */
+  font-size: 16px;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.SignUp-button:hover {
+  background-color: #f0f4ef; /* Slight hover effect */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Slight shadow on hover */
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid #ccc; /* Light separator color */
+  margin: 25px 0;
+  width: 100%;
+}
+
+.SignUp-button img {
+  margin-right: 10px;
+}
+
+.email-label,
+.password-label,
+.confirm-password-label {
+  color: #666;
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px; /* More rounded corners */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border: 1px solid #344966; /* Focus border color */
+}
+
+.continue-button {
+  width: 100%; /* Full width */
+  padding: 12px;
+  background-color: #344966;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.continue-button:hover {
+  background-color: #0d1821;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-prompt {
+  font-size: 14px;
+  color: #666;
+  margin-top: 20px;
+}
+
+.login-prompt a {
+  color: #344966;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
