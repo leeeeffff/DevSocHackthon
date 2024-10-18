@@ -4,10 +4,12 @@ import Landingbanner from '../components/Landingbanner';
 import Circle from '../assests/images/circle.png';
 import Square from "../assests/images/square.png";
 import Tri from '../assests/images/tri.png';
+import Navbar from '../components/Navbar';
 
 const Landingpage = () => {
   return (
     <div className='Landingpage'>
+      <Navbar/>
       <Landingbanner />
       <div className="content">
         <h1 className="h1"></h1>

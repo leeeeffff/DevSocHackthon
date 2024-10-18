@@ -1,0 +1,84 @@
+/* Ai.css */
+
+@font-face {
+    font-family: 'CsClaireMono';
+    src: url('../fonts/CsClaireMonoDemoRegular-0vdyX.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ai-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: 'CsClaireMono', sans-serif;
+    text-align: center;
+}
+
+.ai-container h1 {
+    margin-bottom: 20px;
+}
+
+.run-ai-button {
+    padding: 80px 200px;
+    background-color: #bcc796;
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease; 
+    font-family: 'CsClaireMono', sans-serif;
+}
+
+.run-ai-button:hover {
+    background-color: #d5e0ab;
+    transform: translate(-10px, -10px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shape_img1:hover {
+    transform: translate(-10px, -10px);
+}
+
+.course-plan-container {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.course-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.course-plan-table th, 
+.course-plan-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.course-plan-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.reasoning-container {
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.shape_img {
+    height: 80px;
+    width: auto;
+}
+
+.shape_img1 {
+    height: 100px;
+    width: auto;
+    transition: all 0.5s ease; 
+}

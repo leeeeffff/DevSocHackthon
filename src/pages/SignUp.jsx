@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import '../style/SignUp.css'; // Ensure this file contains your custom styles
+import '../style/SignUp.css';
+import logo from '../assets/Logo1.png';
 import GoogleLogo from '../assets/GoogleLogo.png';
 import GithubLogo from '../assets/GithubLogo.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Nav from '../components/Signnav';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -68,8 +70,10 @@ const SignUp = () => {
   };
 
   return (
+    <div>
+    <Nav/>
     <div className="SignUp-page">
-      {/* Back to Home Link */}
+
       <Link to="/" className="back-arrow">
         <div className="arrow-left">
           <span></span>
@@ -136,6 +140,7 @@ const SignUp = () => {
           Already have an account? <Link to="/login">Log In</Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };

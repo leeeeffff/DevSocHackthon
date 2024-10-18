@@ -46,19 +46,38 @@ export const Landingbanner = () => {
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={7} className="content">
-          <span className="tagline">
-                Find your <span className="highlight-green">PATHWAYS</span> of your own
+            <span className="tagline">
+              Find your <span className="highlight-green">PATHWAYS</span> of your own
             </span>
             <h1>
-                {"Pathways"} <span className="wrap">{text}</span>
+              {"Pathways"} <span className="wrap">{text}</span>
             </h1>
             <p>
-            Planning your courses can feel overwhelming, but Pathways is here to guide you. Our AI-powered tools create personalized degree plans, making your university journey clear and efficient.
+              Planning your courses can feel overwhelming, but Pathways is here to guide you. 
+              Our AI-powered tools create personalized degree plans, making your university journey 
+              clear and efficient.
             </p>
-            <Button className="but" variant="success" href="/Ai">AI</Button> {/* Add button here */}
-            <span style={{ marginLeft: '-20px', display: 'inline-block', textIndent: '36px', position: 'relative', top: '10px' }}>
-             Explore how our AI <br />&nbsp;&nbsp;&nbsp;&nbsp;optimizes your study plan!
-            </span>
+
+            {/* Zig-zag layout */}
+            <div className="button-container">
+              <div className="button-group">
+                <Button className="but" variant="success" href="/Chat">
+                  AI Advisor
+                </Button>
+                <span className="button-text">
+                Consult our AI Advisor for <br /> personalized career guidance.
+                </span>
+              </div>
+
+              <div className="button-group1">
+                <span className="button-text1">
+                  Explore how our AI <br /> optimizes your study plan!
+                </span>
+                <Button className="but1" variant="success" href="/Ai">
+                  Degree Builder
+                </Button>
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>
