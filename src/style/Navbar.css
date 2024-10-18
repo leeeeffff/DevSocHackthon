@@ -16,6 +16,9 @@
   top: 0;
   z-index: 1000;
   font-family: 'CsClaireMono', sans-serif;
+  background-color: transparent; /* Transparent background */
+  box-shadow: none; /* Ensure no box-shadow is applied */
+  border: none; /* Remove any borders that may look like shadows */
 }
 
 
