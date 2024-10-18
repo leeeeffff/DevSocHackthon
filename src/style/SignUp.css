@@ -67,7 +67,7 @@
 }
 
 .SignUp-button:hover {
-  transform: translate(-10px, -10px); 
+  transform: translate(-10px, -10px);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 .separator {
@@ -93,17 +93,26 @@
 input[type="email"],
 input[type="password"] {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 6px; /* More rounded corners */
+  padding: 15px; /* Increased padding for more spacing */
+  margin: 15px 0; /* Add space between the boxes */
+  border-radius: 10px; /* Increase the border radius for a smoother look */
   border: 1px solid #ccc;
-  box-sizing: border-box;
-  transition: border 0.3s ease;
+  background-color: #f9f9f9; /* Light background to make them stand out */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover and focus effects */
 }
 
 input[type="email"]:focus,
 input[type="password"]:focus {
-  border: 1px solid #344966; /* Focus border color */
+  border: 1px solid #344966; /* Darker border on focus */
+  background-color: #ffffff; /* Make the background white on focus */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Enhance shadow on focus */
+  outline: none; /* Remove default outline for a cleaner look */
+}
+
+input::placeholder {
+  color: #b0b0b0; /* Lighter color for placeholders */
+  font-style: italic; /* Italic style for the placeholder text */
 }
 
 .continue-button {
@@ -115,12 +124,12 @@ input[type="password"]:focus {
   border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  transition: all 0.5s ease; 
+  transition: all 0.5s ease;
 }
 
 .continue-button:hover {
   background-color: #d5e0ab;
-  transform: translate(-5px, -5px); 
+  transform: translate(-5px, -5px);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -132,16 +141,25 @@ input[type="password"]:focus {
 
 .login-prompt {
   font-size: 14px;
-  color: #666;
+  color: #ffffff;
   margin-top: 20px;
+  border-radius: 2px;
 }
 
 .login-prompt a {
-  color: #344966;
+  color: white;
+  background-color: #bcc796;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 14px;
+  margin-top: 20px;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease;
+  display: inline-block; /* Ensures padding and background are applied correctly */
 }
 
 .login-prompt a:hover {
-  text-decoration: underline;
+  background-color: #d5e0ab;
+  opacity: 50%;
 }

@@ -129,18 +129,17 @@ input[type="password"]:focus {
 }
 
 .signup-prompt a {
-  color: #bcc796;
+  color: white;
   font-weight: bold;
+  border-radius: 2px;
+  background-color: #bcc796;
   text-decoration: none;
   transition: color 0.3s ease; /* Smooth transition for the color change */
 }
 
 .signup-prompt a:hover {
-  color: #ffffff; /* White color on hover */
-}
-
-.signup-prompt a:hover {
-  text-decoration: underline;
+  color: #d5e0ab; /* White color on hover */
+  opacity: 50%;
 }
 
 .back-arrow {
