@@ -22,6 +22,6 @@ def fetch_comp_courses():
 
     if response.status_code == 200:
         data = response.json()
-        return data['data']['courses']
+        return data['data']['courses']  # Return the course data
     else:
         raise Exception(f"Query failed: {response.status_code} - {response.text}")
