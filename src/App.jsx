@@ -13,7 +13,6 @@ const App = () => {
   return (
     <div className='App'>
       <Router>  
-        <Navbar />
         <Routes>
           <Route path="/" exact Component={Landingpage} />
           <Route path="/Ai" exact Component={Ai} />

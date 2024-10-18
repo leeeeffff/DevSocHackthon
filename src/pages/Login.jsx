@@ -4,6 +4,7 @@ import logo from "../assets/Logo1.png";
 import GoogleLogo from "../assets/GoogleLogo.png";
 import GithubLogo from "../assets/GithubLogo.png";
 import { Link } from "react-router-dom";
+import Nav from '../components/Signnav';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -54,6 +55,8 @@ const Login = () => {
   };
 
   return (
+    <div>
+      <Nav/>
     <div className="login-page">
       {/* Back to Home Link */}
       <Link to="/" className="back-arrow">
@@ -107,9 +110,10 @@ const Login = () => {
 
         {/* Prompt to sign-up page for users without an account */}
         <p className="signup-prompt">
-          Don't have an account? <Link to="/signup">Sign Up</Link>
+          Don't have an account? <Link to="/signup" className="lol">Sign Up</Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };

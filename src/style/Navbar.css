@@ -5,21 +5,6 @@
   font-style: normal;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 30px;
-  height: 60px;
-  width: 100%; 
-  position: fixed;
-  top: 0;
-  z-index: 1000;
-  font-family: 'CsClaireMono', sans-serif;
-  background-color: transparent; /* Transparent background */
-  box-shadow: none; /* Ensure no box-shadow is applied */
-  border: none; /* Remove any borders that may look like shadows */
-}
 
 
 .leftSide img {
@@ -101,4 +86,16 @@
 
 .Ai:hover {
   background-color: #BFCC94; 
+}
+
+.lol {
+  width: 100%; /* Full width */
+  padding: 3px;
+  background-color: #000000;
+  color: #899269;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.5s ease; 
 }
