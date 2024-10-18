@@ -1,9 +1,13 @@
-The course plan is structured to provide a solid foundation in computer science concepts and skills in the early terms (T1 and T2) before progressing to more advanced and specialized topics in T3.
+The course plan is structured to build a strong foundation in computer science and progress into more advanced topics, ensuring a well-rounded education and preparation for higher-level courses and real-world applications.
 
-In T1, Programming Fundamentals is introduced without any prerequisites to ensure that all students start with a basic understanding of programming. Discrete Mathematics and Mathematics 1A are also fundamental courses that provide the mathematical background necessary for more advanced topics in computer science.
+In Term 1, students start with Programming Fundamentals as it serves as the initial step in understanding fundamental concepts of programming without any prerequisites. This course lays the groundwork for students to grasp basic programming skills and logic, which are essential for further studies in computer science.
 
-In T2, Computer Systems Fundamentals and Software Engineering Fundamentals build upon the knowledge gained in Programming Fundamentals. Data Structures and Algorithms further strengthens students' programming skills and problem-solving abilities. These courses lay the groundwork for more complex topics in T3.
+Discrete Mathematics is also included in Term 1 to introduce students to foundational mathematical concepts that are crucial for understanding algorithms, data structures, and other advanced topics in computer science. It provides the necessary mathematical background for analyzing and solving computational problems.
 
-In T3, Object-Oriented Design and Programming and Computer Science Project delve into more advanced programming concepts and practical application of software engineering principles. These courses require prerequisites from T2 to ensure that students have the necessary foundational knowledge to succeed. Professional Issues and Ethics in Information Technology rounds out the curriculum by addressing important ethical and social considerations in the field of computer science.
+Mathematics 1A is included in Term 1 to complement the concepts introduced in Programming Fundamentals and Discrete Mathematics. It provides a broader mathematical foundation that is essential for various topics in computer science.
 
-Overall, the course plan is designed to gradually introduce students to key concepts in computer science, build a strong foundation in programming and software engineering, and then progress to more advanced topics while addressing ethical considerations in the field. By following this progression, students can develop a comprehensive understanding of computer science and be well-prepared for future courses and professional opportunities.
+Moving on to Term 2, Computer Systems Fundamentals and Software Engineering Fundamentals are introduced. These courses require Programming Fundamentals as a prerequisite, ensuring that students have a solid understanding of programming concepts before delving into computer systems and software engineering principles.
+
+Data Structures and Algorithms is also included in Term 2, as it builds upon the programming skills acquired in Programming Fundamentals. This course is essential for understanding efficient data organization and algorithm design, which are core components of computer science.
+
+Term 3 focuses on more advanced topics such as Object-Oriented Design and Programming, requiring prior knowledge from Software Engineering Fundamentals

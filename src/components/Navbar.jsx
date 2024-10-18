@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <div className='na'>
     <div className='navbar'>
       <div className='leftSide'>
         <Link to="/" className='logoLink'>
@@ -17,7 +16,6 @@ const Navbar = () => {
         <Link to="/login" className='Login'>Login</Link>
         <Link to="/SignUp" className='Signup'>Sign up</Link>
       </div>
-    </div>
     </div>
   );
 }
