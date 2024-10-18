@@ -4,7 +4,8 @@ import '../style/FormPage.css';
 
 const FormPage = () => {
   const location = useLocation();
-  const { userId } = location.state; //Extract userId from previous state
+  // Get userId from either location.state (regular sign-up) or query parameters (OAuth sign-up)
+  const userId = location.state?.userId || new URLSearchParams(location.search).get('userId');
 
 
   const [formData, setFormData] = useState({
@@ -94,6 +95,8 @@ const FormPage = () => {
           const data = await response.json();
           console.log('Personal information saved:', data);
           alert('Personal information saved successfully!');
+          // Redirect to the dashboard
+          window.location.href = '/dashboard';
         } else {
           const errorData = await response.json();
           setError(errorData.message);
