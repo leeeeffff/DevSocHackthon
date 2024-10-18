@@ -1,6 +1,6 @@
 // Define authentication routes
 import express from 'express';  // Use import for express
-import { loginUser, signupUser } from '../controllers/authController.js';  // Import controller (include .js extension)
+import { loginUser, signupUser, storePersonalInfo } from '../controllers/authController.js';  // Import controller (include .js extension)
 import passport from 'passport';  // Import passport for OAuth handling
 
 const router = express.Router();
@@ -38,5 +38,8 @@ router.get('/github/callback',
         res.redirect('/dashboard');  // Adjust the redirect as needed for your app
     }
 );
+
+// Personal information route
+router.post('/users/:userId/personal-info', storePersonalInfo);
 
 export default router;
