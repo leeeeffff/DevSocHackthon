@@ -1,11 +1,42 @@
-// define authetication routes
-
-const express = require('express');
-const { signupUser } = require('../controllers/authController'); // import controller
+// Define authentication routes
+import express from 'express';  // Use import for express
+import { loginUser, signupUser } from '../controllers/authController.js';  // Import controller (include .js extension)
+import passport from 'passport';  // Import passport for OAuth handling
 
 const router = express.Router();
 
-// POST request to handle user sign-up
+// Sign up route
 router.post('/signup', signupUser);
 
-module.exports = router;
+// Login route
+router.post('/login', loginUser);
+
+// Google OAuth route
+router.get('/google', passport.authenticate('google', {
+    scope: ['profile', 'email']
+}));
+
+// Google OAuth callback route
+router.get('/google/callback',
+    passport.authenticate('google', { failureRedirect: '/' }),
+    (req, res) => {
+        // Successful authentication, redirect to dashboard or home
+        res.redirect('/dashboard');  // Adjust the redirect as needed for your app
+    }
+);
+
+// GitHub OAuth route
+router.get('/github', passport.authenticate('github', {
+    scope: ['user:email']
+}));
+
+// GitHub OAuth callback route
+router.get('/github/callback',
+    passport.authenticate('github', { failureRedirect: '/' }),
+    (req, res) => {
+        // Successful authentication, redirect to dashboard or home
+        res.redirect('/dashboard');  // Adjust the redirect as needed for your app
+    }
+);
+
+export default router;
