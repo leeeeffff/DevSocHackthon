@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../style/ProfilePage.css'; // Make sure to create and link a corresponding CSS file
 import avatar from '../assests/images/circle.png'; // Replace with the actual path to your avatar image
+import Navbaradvice from '../components/Navbaradvice';
 
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -37,6 +38,7 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-page">
+      <Navbaradvice />
       <div className="header">
         <h2>
           <span className="typing-animation">Welcome, John</span>
