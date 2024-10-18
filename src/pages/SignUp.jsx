@@ -3,7 +3,7 @@ import '../style/SignUp.css';
 import logo from '../assets/Logo1.png';
 import GoogleLogo from '../assets/GoogleLogo.png';
 import GithubLogo from '../assets/GithubLogo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Nav from '../components/Signnav';
 
 const SignUp = () => {
