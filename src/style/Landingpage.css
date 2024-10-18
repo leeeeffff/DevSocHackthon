@@ -21,7 +21,7 @@ html, body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #ffffff;
+    background: linear-gradient(#ffffff33, #ffffff, #c1c9a7);
     overflow: hidden;
 }
 

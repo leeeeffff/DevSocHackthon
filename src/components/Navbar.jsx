@@ -12,12 +12,7 @@ const Navbar = () => {
           Pathways
         </Link>
       </div>
-      {/* Uncomment the below if needed */}
-      {/* <div className='middle'>
-        <Link to="/Ai" className='Ai'>Check the AI out</Link>
-      </div> */}
       <div className='rightSide'>
-        <Link to="/AboutPage" className='AboutPage'>About us</Link>
         <Link to="/login" className='Login'>Login</Link>
         <Link to="/SignUp" className='Signup'>Sign up</Link>
       </div>
