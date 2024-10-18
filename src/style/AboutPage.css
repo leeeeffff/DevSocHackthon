@@ -183,17 +183,22 @@
 }
 
 .signup-button {
-  padding: 10px 20px;
-  background-color: #000;
-  color: white;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #B4CDED, #344966); /* Gradient from Light Blue to Medium Blue */
+  color: #0D1821; /* Dark Blue text for contrast */
   border: none;
-  border-radius: 0 5px 5px 0;
-  font-size: 14px;
+  border-radius: 30px; /* Fully rounded button */
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .signup-button:hover {
-  background-color: #444;
+  background: linear-gradient(135deg, #344966, #B4CDED); /* Gradient reversal on hover */
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .footer-bottom {

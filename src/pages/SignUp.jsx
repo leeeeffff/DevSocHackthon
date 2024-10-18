@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import '../style/SignUp.css';
-import logo from '../assets/Logo1.png';
+import '../style/SignUp.css'; // Ensure this file contains your custom styles
+import logo from '../assets/Logo1.png'; // Adjust the path based on your structure
 import GoogleLogo from '../assets/GoogleLogo.png';
 import GithubLogo from '../assets/GithubLogo.png';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -56,25 +56,24 @@ const SignUp = () => {
     }
   };
 
+  // Redirect to the Google OAuth route
   const handleGoogleSignUp = () => {
-    console.log('SignUp with Google');
+    window.location.href = 'http://localhost:5000/api/auth/google';
   };
 
+  // Redirect to the GitHub OAuth route
   const handleGithubSignUp = () => {
-    console.log('SignUp with Github');
+    window.location.href = 'http://localhost:5000/api/auth/github';
   };
 
   return (
     <div className="SignUp-page">
-      <div className="navbar">
-        <img src={logo} alt="Logo" className="logo" />
-      </div>
-
+      {/* Back to Home Link */}
       <Link to="/" className="back-arrow">
         <div className="arrow-left">
           <span></span>
         </div>
-        <span className="back-text">Back to Portfolio</span>
+        <span className="back-text">Back to Home Page</span>
       </Link>
 
       <div className="SignUp-container">
@@ -130,6 +129,11 @@ const SignUp = () => {
             Continue
           </button>
         </form>
+
+        {/* Prompt for existing users */}
+        <p className="login-prompt">
+          Already have an account? <Link to="/login">Log In</Link>
+        </p>
       </div>
     </div>
   );

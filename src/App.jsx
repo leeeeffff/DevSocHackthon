@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp';
 import FormPage from './pages/FormPage';
 import AboutPage from './pages/AboutPage';
 import ProfilePage from './pages/ProfilePage';
+import Chat from './pages/Chat';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/" exact Component={ Landingpage } />
           <Route path="/login" exact Component={ Login } />
           <Route path="/SignUp" exact Component={ SignUp } />
+          <Route path="/Chat" exact Component={ Chat } />
           <Route path="/FormPage" exact Component={ FormPage } />
           <Route path="/ProfilePage" exact Component={ ProfilePage } />
         </Routes>
