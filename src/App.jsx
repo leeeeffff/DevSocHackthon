@@ -14,13 +14,12 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" exact Component={Landingpage} />
-          <Route path="/Ai" exact Component={Ai} />
-          <Route path="/AboutPage" exact Component={ AboutPage } />
-          <Route path="/" exact Component={ Landingpage } />
-          <Route path="/login" exact Component={ Login } />
-          <Route path="/SignUp" exact Component={ SignUp } />
-          <Route path="/FormPage" exact Component={ FormPage } />
+          <Route path="/" exact element={<Landingpage />} />
+          <Route path="/Ai" exact element={<Ai />} />
+          <Route path="/AboutPage" exact element={<AboutPage />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/SignUp" exact element={<SignUp />} />
+          <Route path="/FormPage" exact element={<FormPage />} />
         </Routes>
       </Router>
     </div>
