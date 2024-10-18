@@ -7,6 +7,7 @@ import Ai from './pages/Ai';  // Import the AI page
 import SignUp from './pages/SignUp';
 import FormPage from './pages/FormPage';
 import AboutPage from './pages/AboutPage';
+import Chat from './pages/Chat';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/" exact Component={ Landingpage } />
           <Route path="/login" exact Component={ Login } />
           <Route path="/SignUp" exact Component={ SignUp } />
+          <Route path="/Chat" exact Component={ Chat } />
           <Route path="/FormPage" exact Component={ FormPage } />
         </Routes>
       </Router>
