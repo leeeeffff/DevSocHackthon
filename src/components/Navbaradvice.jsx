@@ -16,7 +16,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className='rightSide'>
+      <div className='profileSide'>
         <div 
           className="profile-container" 
           onMouseEnter={() => setDropdownOpen(true)}

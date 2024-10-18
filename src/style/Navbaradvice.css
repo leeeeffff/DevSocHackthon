@@ -63,3 +63,8 @@
   .dropdown-item:hover {
     background-color: #e0e0e0;
   }
+
+  .profileSide {
+    margin-top: 20px;
+    margin-right: 27px;
+  }
