@@ -1,5 +1,6 @@
 import pool from '../config/db.js';  // Get db connection, with .js extension
 import bcrypt from 'bcrypt';  // For password hashing
+import axios from 'axios'; // For github login
 
 // Sign up function
 export const signupUser = async (req, res) => {
@@ -24,23 +25,71 @@ export const signupUser = async (req, res) => {
 };
 
 // Handle OAuth login for Google/GitHub
-export const oauthLogin = async (profile, done) => {
+// OAuth login function
+export const oauthLogin = async (profile, done, provider) => {
   try {
-    const email = profile.emails[0].value;  // Extract email from OAuth profile
+    let email = null;
 
-    const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]); // Check if the user exists in the database
+    // Handle Google login or GitHub login with email
+    if (provider === 'google') {
+      email = profile.emails[0].value;  // Extract email from Google profile
+    } else if (provider === 'github') {
+      // Handle GitHub login and fetch email if not present in profile
+      if (profile.emails && profile.emails.length > 0) {
+        email = profile.emails[0].value;  // Use the first email if present
+      } else {
+        // GitHub sometimes does not include emails in the profile, so we fetch it from the API
+        const accessToken = profile._json.access_token;  // Capture access token from GitHub strategy
+        const emailResponse = await axios.get('https://api.github.com/user/emails', {
+          headers: {
+            Authorization: `token ${accessToken}`,
+          },
+        });
+        const primaryEmail = emailResponse.data.find(e => e.primary && e.verified);
+        email = primaryEmail ? primaryEmail.email : null;
 
-    if (result.rows.length === 0) {
-      return done(null, false, { message: 'User not found' }); // If the user is not found, return an error (no user creation)
+        if (!email) {
+          return done(null, false, { message: 'No verified email associated with this GitHub account.' });
+        }
+      }
     }
 
-    return done(null, result.rows[0]);  // If user exists, return the user data
+    const providerId = profile.id;  // Use profile.id for provider-specific user identification
+    let result;
 
+    // Check if user exists based on Google or GitHub ID, or by email
+    if (provider === 'google') {
+      result = await pool.query('SELECT * FROM users WHERE google_id = $1 OR email = $2', [providerId, email]);
+    } else if (provider === 'github') {
+      result = await pool.query('SELECT * FROM users WHERE github_id = $1 OR email = $2', [providerId, email]);
+    }
+
+    if (result.rows.length > 0) {
+      const user = result.rows[0];
+
+      // If user exists but doesn't have a provider ID, update the record with the provider ID
+      if ((provider === 'google' && !user.google_id) || (provider === 'github' && !user.github_id)) {
+        await pool.query(
+          `UPDATE users SET ${provider}_id = $1 WHERE email = $2`,
+          [providerId, email]
+        );
+      }
+
+      // User exists, log them in
+      return done(null, user);
+    } else {
+      // User doesn't exist, create a new user with provider ID and email
+      const newUser = await pool.query(
+        `INSERT INTO users (email, ${provider}_id) VALUES ($1, $2) RETURNING *`,
+        [email, providerId]
+      );
+      return done(null, newUser.rows[0]);  // Log them in after creating the account
+    }
   } catch (error) {
-    console.error('Error during OAuth login:', error);
-    return done(error, null);  // Handle error in OAuth flow
+    return done(error);
   }
 };
+
 
 // Handle email login
 export const loginUser = async (req, res) => {
@@ -84,19 +133,21 @@ export const storePersonalInfo = async (req, res) => {
     coursesPerYear,
     careers,
   } = req.body;
+
   try {
-    // Convert `coursesDone` into PostgreSQL array format with each element properly quoted
-    const coursesDoneArray = `{${coursesDone.split(',').map(course => `"${course.trim()}"`).join(',')}}`;
+    // Handle null values for non-current students
+    const yearInValue = isCurrentStudent ? yearIn : null;
+    const majorValue = isCurrentStudent ? major : null;
+    const coursesDoneArray = isCurrentStudent && coursesDone
+      ? `{${coursesDone.split(',').map(course => course.trim()).join(',')}}`
+      : '{}'; // Empty array if not a current student
 
-    // Ensure `coursesPerYear` is stored as JSON (since it's a nested object)
-    const coursesPerYearJson = JSON.stringify(coursesPerYear);
+    // Convert `coursesPerYear` and `careers` to proper PostgreSQL array format
+    const coursesPerYearArray = JSON.stringify(coursesPerYear);  // Assuming it's an object
+    const careersArray = `{${careers.map(career => career.trim()).join(',')}}`;
 
-    // Convert `careers` into PostgreSQL array format with proper quoting
-    const careersArray = `{${careers.map(career => `"${career.trim()}"`).join(',')}}`;
-
-    // Convert `summerTermAArray` into PostgreSQL array format with proper quoting
-    const summerTermArray = `{${summerTerm.split(',').map(term => term.trim()).join(',')}}`;
-
+    // Fix for `summerTerm`: Convert to a text array (e.g., {"1"} for a single summer term)
+    const summerTermArray = `{${summerTerm}}`; // Wrap in curly braces to make it a proper array literal
 
     // Insert personal info into the database
     const result = await pool.query(
@@ -106,7 +157,7 @@ export const storePersonalInfo = async (req, res) => {
       ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING *`,
       [
         userId, name, age, studentType, gender, isCurrentStudent,
-        yearIn, major, coursesDoneArray, summerTermArray, coursesPerYearJson, careersArray
+        yearInValue, majorValue, coursesDoneArray, summerTermArray, coursesPerYearArray, careersArray
       ]
     );
 
