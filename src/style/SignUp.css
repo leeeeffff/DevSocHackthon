@@ -43,12 +43,14 @@
   font-weight: bold;
   color: #8d917f; /* Darker text color */
   margin-bottom: 20px;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .SignUp-container p {
   font-size: 16px;
   margin-bottom: 25px;
   color: #8d917f;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .SignUp-button {
@@ -64,6 +66,7 @@
   cursor: pointer;
   background-color: white;
   transition: all 0.5s ease;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .SignUp-button:hover {
@@ -128,12 +131,14 @@ input[type="password"]:focus {
   color: red;
   font-size: 14px;
   margin-top: 10px;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .login-prompt {
   font-size: 14px;
   color: #666;
   margin-top: 20px;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .login-prompt a {

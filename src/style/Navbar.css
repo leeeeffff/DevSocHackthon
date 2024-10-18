@@ -87,15 +87,3 @@
 .Ai:hover {
   background-color: #BFCC94; 
 }
-
-.lol {
-  width: 100%; /* Full width */
-  padding: 3px;
-  background-color: #000000;
-  color: #899269;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.5s ease; 
-}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../style/FormPage.css';
+import Nav from '../components/Signnav';
 
 const FormPage = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,10 @@ const FormPage = () => {
     },
     careers: [], // Step 3 career choices
   });
+
+  const handleStudentTypeChange = (type) => {
+    setFormData({ ...formData, studentType: type });
+  };
 
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -82,6 +87,8 @@ const FormPage = () => {
   };
 
   return (
+    <div>
+      <Nav/>
     <div className="form-page">
       <div className="steps-container">
         <div className="step-wrapper">
@@ -124,30 +131,22 @@ const FormPage = () => {
               required
             />
 
-            <p>What type of student are you?</p>
-            <div className="radio-group">
-              <label>
-                <input
-                  type="radio"
-                  name="studentType"
-                  value="domestic"
-                  checked={formData.studentType === 'domestic'}
-                  onChange={handleInputChange}
-                />
-                Domestic
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="studentType"
-                  value="international"
-                  checked={formData.studentType === 'international'}
-                  onChange={handleInputChange}
-                />
-                International
-              </label>
+          <p>What type of student are you?</p>
+          <div className="toggle-container">
+            <div
+              className={`toggle-option ${formData.studentType === 'domestic' ? 'selected' : ''}`}
+              onClick={() => handleStudentTypeChange('domestic')}
+            >
+              Domestic
             </div>
+            <div className="divider"></div>
+            <div
+              className={`toggle-option ${formData.studentType === 'international' ? 'selected' : ''}`}
+              onClick={() => handleStudentTypeChange('international')}
+            >
+              International
+            </div>
+          </div>
 
             <label htmlFor="gender">Gender</label>
             <input
@@ -396,6 +395,7 @@ const FormPage = () => {
             </form>
           </>
         )}
+    </div>
     </div>
   );
 };
