@@ -140,21 +140,23 @@ const FormPage = () => {
           </>
         )}
 
-          {/* Step 2: University Information */}
-          {currentStep === 2 && (
-          <>
-            <h1 className="title">University Information</h1>
-            <form className="form-container" onSubmit={handleSubmit}>
-              <label htmlFor="degree">What degree are you doing?</label>
-              <input
-                type="text"
-                id="degree"
-                name="degree"
-                value={formData.degree}
-                onChange={handleInputChange}
-                placeholder="Enter your degree"
-                required
-              />
+      {/* Step 2: University Information */}
+      {currentStep === 2 && (
+        <>
+          <h1 className="title">University Information</h1>
+          <form className="form-container" onSubmit={handleSubmit}>
+          <label htmlFor="degree">What degree are you doing?</label>
+          <select
+            id="degree"
+            name="degree"
+            value={formData.degree}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="" disabled>Select your degree</option> {/* Placeholder option */}
+            <option value="Bachelor of Computer Science">Bachelor of Computer Science</option>
+            <option value="Master of Information Technology">Master of Information Technology</option>
+          </select>
 
             <p className="form-label">Are you a current student?</p>
             <div className="button-group">
@@ -190,16 +192,23 @@ const FormPage = () => {
                   ))}
                 </div>
 
-                  <label htmlFor="major">What is your major?</label>
-                  <input
-                    type="text"
-                    id="major"
-                    name="major"
-                    value={formData.major}
-                    onChange={handleInputChange}
-                    placeholder="Enter your major"
-                    required
-                  />
+                <label htmlFor="major">What is your major?</label>
+                <select
+                  id="major"
+                  name="major"
+                  value={formData.major}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value="" disabled>Select your major</option> {/* Placeholder option */}
+                  <option value="Database Systems">Database Systems</option>
+                  <option value="eCommerce Systems">eCommerce Systems</option>
+                  <option value="Programming Languages">Programming Languages</option>
+                  <option value="Embedded Systems">Embedded Systems</option>
+                  <option value="Artificial Intelligence">Artificial Intelligence</option>
+                  <option value="Computer Networks">Computer Networks</option>
+                  <option value="Security Engineering">Security Engineering</option>
+                </select>
 
                   <label htmlFor="coursesDone">What courses have you done?</label>
                   <input
