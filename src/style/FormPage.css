@@ -1,18 +1,29 @@
+/* Navbar styling */
+@font-face {
+  font-family: 'CsClaireMono';
+  src: url('../fonts/CsClaireMonoDemoRegular-0vdyX.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .form-page {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 50px;
-  background-color: #f5f5f5;
-  min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 93.5vh; 
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #a7b65c);
+  padding: 60px;
+  font-family: 'CsClaireMono', sans-serif;
 }
+
 
 .steps-container {
   display: flex;
   justify-content: space-between;
   width: 700px;
-  margin-bottom: 30px;
+  margin-top: -120px;
+  margin-bottom: 80px;
   position: relative;
 }
 
@@ -25,25 +36,25 @@
 .step {
   width: 30px;
   height: 30px;
-  border: 3px solid #333;
+  border: 3px solid #000000;
   border-radius: 50%;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   z-index: 2;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .step.active {
-  background-color: #344966;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #000000;
+  box-shadow: 0 0 50px rgb(30, 88, 3);
 }
 
 .line {
   position: absolute;
   top: 50%;
   left: 30px;
-  width: 300px;
+  width: 320px;
   height: 3px;
-  background-color: lightgray;
+  background-color: rgb(0, 0, 0);
   transition: background-color 0.3s ease-in-out, width 0.5s ease-in-out;
 }
 
@@ -66,6 +77,7 @@
   max-width: 400px;
   width: 100%;
   text-align: left;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .form-container label {
@@ -86,6 +98,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .radio-group, .checkbox-group {
@@ -131,3 +144,58 @@
 .year-section {
   margin-bottom: 50px;
 }
+
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+}
+
+.toggle-option {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+/* Divider between the two options */
+
+
+/* Background highlight for the selected option */
+.selected-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Adjusted width to cover half of the container */
+  height: 100%;
+  background-color: #899269;
+  transition: left 0.3s;
+  z-index: 1;
+}
+
+/* Adjust the background position based on selection */
+.selected-domestic .selected-background {
+  left: 0;
+}
+
+.selected-international .selected-background {
+  left: 50%;
+}
+
+.toggle-option.selected {
+  color: white;
+  background-color: #bcc796;
+  border-radius: 5px;
+  padding: 15px;
+}
+
