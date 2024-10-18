@@ -2,10 +2,13 @@
 
 html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   font-family: 'CsClaireMono', sans-serif;
+}
+
+.backers {
+  background: linear-gradient(#ffffff33, #c1c9a7, #c1c9a7);
+  min-height: 93.5vh;
 }
 
 .chat-container {
@@ -75,14 +78,18 @@ html, body {
 
 .shapers {
   position: absolute;
-  top: 10px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
   height: 80px;
   width: auto;
-  z-index: 1;
-  opacity: 1;
-  transition: opacity 0.3s ease; /* Smooth fading */
+  z-index: 10;
+  opacity: 10;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  background-color: #e6e6e6;
+  box-shadow: 13px 20px 30px rgba(0, 0, 0, 0.5);
 }
 
 .message-container.user {
