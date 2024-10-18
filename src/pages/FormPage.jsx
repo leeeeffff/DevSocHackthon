@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../style/FormPage.css';
+import Nav from '../components/Signnav';
 
 const FormPage = () => {
   const [formData, setFormData] = useState({
@@ -31,14 +32,6 @@ const FormPage = () => {
     });
   };
 
-  const handleRadioChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value === 'true' ? true : false
-    });
-  };
-
   const handleSliderChange = (e, year, term) => {
     const { value } = e.target;
     setFormData(prevState => ({
@@ -53,24 +46,6 @@ const FormPage = () => {
     }));
   };
 
-  const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
-    let updatedCareers = [...formData.careers];
-
-    if (checked) {
-      if (updatedCareers.length < 3) {
-        updatedCareers.push(value);
-      }
-    } else {
-      updatedCareers = updatedCareers.filter(career => career !== value);
-    }
-
-    setFormData({
-      ...formData,
-      careers: updatedCareers
-    });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form data:', formData);
@@ -82,6 +57,8 @@ const FormPage = () => {
   };
 
   return (
+    <div>
+      <Nav/>
     <div className="form-page">
       <div className="steps-container">
         <div className="step-wrapper">
@@ -260,7 +237,7 @@ const FormPage = () => {
                     <label>{term}</label>
                     <input
                       type="range"
-                      min={0} 
+                      min={0}
                       max={term === 'T0' ? 2 : 4}
                       value={formData.coursesPerYear[`year${year}`][term]}
                       onChange={(e) => handleSliderChange(e, `year${year}`, term)}
@@ -325,6 +302,7 @@ const FormPage = () => {
           </form>
         </>
       )}
+    </div>
     </div>
   );
 };

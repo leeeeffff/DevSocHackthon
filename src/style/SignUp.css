@@ -43,12 +43,14 @@
   font-weight: bold;
   color: #8d917f; /* Darker text color */
   margin-bottom: 20px;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .SignUp-container p {
   font-size: 16px;
   margin-bottom: 25px;
   color: #8d917f;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .SignUp-button {
@@ -64,6 +66,7 @@
   cursor: pointer;
   background-color: white;
   transition: all 0.5s ease;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .SignUp-button:hover {
@@ -137,6 +140,7 @@ input::placeholder {
   color: red;
   font-size: 14px;
   margin-top: 10px;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .login-prompt {
@@ -144,6 +148,7 @@ input::placeholder {
   color: #ffffff;
   margin-top: 20px;
   border-radius: 2px;
+  font-family: 'CsClaireMono', sans-serif;
 }
 
 .login-prompt a {
