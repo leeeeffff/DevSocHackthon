@@ -61,7 +61,7 @@ export const Landingbanner = () => {
             {/* Zig-zag layout */}
             <div className="button-container">
               <div className="button-group">
-                <Button className="but" variant="success" href="/SignUp">
+                <Button className="but" variant="success" href="/Chat">
                   AI Advisor
                 </Button>
                 <span className="button-text">
@@ -73,7 +73,7 @@ export const Landingbanner = () => {
                 <span className="button-text1">
                   Explore how our AI <br /> optimizes your study plan!
                 </span>
-                <Button className="but1" variant="success" href="/SignUp">
+                <Button className="but1" variant="success" href="/Ai">
                   Degree Builder
                 </Button>
               </div>

@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='leftSide'>
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Link to="/dashboard" style={{ textDecoration: 'none', color: 'inherit' }}>
           <img src={Logo} alt="Logo" />
           Pathways
         </Link>
@@ -25,8 +25,8 @@ const Navbar = () => {
           <img src={Profile} alt="Profile" className="profile-picture" />
           {dropdownOpen && (
             <div className="dropdown-menu">
-              <Link to="/ProfilePage" className="dropdown-item">Profile</Link>
-              <Link to="/Settings" className="dropdown-item">Settings</Link>
+              <Link to="/profile" className="dropdown-item">Profile</Link>
+              <Link to="/settings" className="dropdown-item">Settings</Link>
               <Link to="/logout" className="dropdown-item">Log Out</Link>
             </div>
           )}

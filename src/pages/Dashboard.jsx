@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import '../style/Landingpage.css';
-import Landingbanner from '../components/Landingbanner';
+import Landingbanner from '../components/Landingbannerauth';
 import Circle from '../assests/images/circle.png';
 import Square from "../assests/images/square.png";
 import Tri from '../assests/images/tri.png';
