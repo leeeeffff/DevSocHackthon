@@ -22,10 +22,6 @@ const FormPage = () => {
     careers: [], // Step 3 career choices
   });
 
-  const handleStudentTypeChange = (type) => {
-    setFormData({ ...formData, studentType: type });
-  };
-
   const [currentStep, setCurrentStep] = useState(1);
 
   const handleInputChange = (e) => {
@@ -33,18 +29,6 @@ const FormPage = () => {
     setFormData({
       ...formData,
       [name]: value
-    });
-  };
-
-  const handleGenderChange = (gender) => {
-    setFormData({ ...formData, gender });
-  };
-
-  const handleRadioChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value === 'true' ? true : false
     });
   };
 
@@ -60,24 +44,6 @@ const FormPage = () => {
         }
       }
     }));
-  };
-
-  const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
-    let updatedCareers = [...formData.careers];
-
-    if (checked) {
-      if (updatedCareers.length < 3) {
-        updatedCareers.push(value);
-      }
-    } else {
-      updatedCareers = updatedCareers.filter(career => career !== value);
-    }
-
-    setFormData({
-      ...formData,
-      careers: updatedCareers
-    });
   };
 
   const handleSubmit = (e) => {
@@ -135,33 +101,37 @@ const FormPage = () => {
               required
             />
 
-          <p>What type of student are you?</p>
-          <div className="toggle-container">
-            <div
-              className={`toggle-option ${formData.studentType === 'domestic' ? 'selected' : ''}`}
-              onClick={() => handleStudentTypeChange('domestic')}
-            >
-              Domestic
+            <p className="form-label">What type of student are you?</p>
+            <div className="button-group">
+              <button
+                type="button"
+                className={`student-type-button ${formData.studentType === 'domestic' ? 'active' : ''}`}
+                onClick={() => setFormData({ ...formData, studentType: 'domestic' })}
+              >
+                Domestic
+              </button>
+              <button
+                type="button"
+                className={`student-type-button ${formData.studentType === 'international' ? 'active' : ''}`}
+                onClick={() => setFormData({ ...formData, studentType: 'international' })}
+              >
+                International
+              </button>
             </div>
-            <div className="divider"></div>
-            <div
-              className={`toggle-option ${formData.studentType === 'international' ? 'selected' : ''}`}
-              onClick={() => handleStudentTypeChange('international')}
-            >
-              International
-            </div>
-          </div>
 
             <label htmlFor="gender">Gender</label>
-            <input
-              type="text"
+            <select
               id="gender"
               name="gender"
               value={formData.gender}
               onChange={handleInputChange}
-              placeholder="Enter your gender"
               required
-            />
+            >
+              <option value="" disabled>Select your gender</option> {/* Placeholder option */}
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="others">Others</option>
+            </select>
 
             <button type="submit" className="next-button">
               Next
@@ -186,75 +156,38 @@ const FormPage = () => {
               required
             />
 
-            <p>Are you a current student?</p>
-            <div className="radio-group">
-              <label>
-                <input
-                  type="radio"
-                  name="isCurrentStudent"
-                  value="true"
-                  checked={formData.isCurrentStudent === true}
-                  onChange={handleRadioChange}
-                />
+            <p className="form-label">Are you a current student?</p>
+            <div className="button-group">
+              <button
+                type="button"
+                className={`student-type-button ${formData.isCurrentStudent === true ? 'active' : ''}`}
+                onClick={() => setFormData({ ...formData, isCurrentStudent: true })}
+              >
                 Yes
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="isCurrentStudent"
-                  value="false"
-                  checked={formData.isCurrentStudent === false}
-                  onChange={handleRadioChange}
-                />
+              </button>
+              <button
+                type="button"
+                className={`student-type-button ${formData.isCurrentStudent === false ? 'active' : ''}`}
+                onClick={() => setFormData({ ...formData, isCurrentStudent: false })}
+              >
                 No
-              </label>
+              </button>
             </div>
 
             {formData.isCurrentStudent && (
               <>
-                <p>What year are you in?</p>
-                <div className="radio-group">
-                  <label>
-                    <input
-                      type="radio"
-                      name="yearIn"
-                      value="1"
-                      checked={formData.yearIn === '1'}
-                      onChange={handleInputChange}
-                    />
-                    1
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="yearIn"
-                      value="2"
-                      checked={formData.yearIn === '2'}
-                      onChange={handleInputChange}
-                    />
-                    2
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="yearIn"
-                      value="3"
-                      checked={formData.yearIn === '3'}
-                      onChange={handleInputChange}
-                    />
-                    3
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="yearIn"
-                      value="4"
-                      checked={formData.yearIn === '4'}
-                      onChange={handleInputChange}
-                    />
-                    4
-                  </label>
+                <p className="form-label">What year are you in?</p>
+                <div className="button-group">
+                  {[1, 2, 3, 4].map((year) => (
+                    <button
+                      key={year}
+                      type="button"
+                      className={`student-type-button ${formData.yearIn === year.toString() ? 'active' : ''}`}
+                      onClick={() => setFormData({ ...formData, yearIn: year.toString() })}
+                    >
+                      {year}
+                    </button>
+                  ))}
                 </div>
 
                 <label htmlFor="major">What is your major?</label>
@@ -281,51 +214,18 @@ const FormPage = () => {
               </>
             )}
 
-            <p>Click on the years you are planning to do summer term</p>
-            <div className="radio-group">
-              <label>
-                <input
-                  type="radio"
-                  name="summerTerm"
-                  value="1"
-                  checked={formData.summerTerm === '1'}
-                  onChange={handleInputChange}
-                />
-                1
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="summerTerm"
-                  value="2"
-                  checked={formData.summerTerm === '2'}
-                  onChange={handleInputChange}
-                />
-                2
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="summerTerm"
-                  value="3"
-                  checked={formData.summerTerm === '3'}
-                  onChange={handleInputChange}
-                />
-                3
-              </label>
-
-              <label>
-                <input
-                  type="radio"
-                  name="summerTerm"
-                  value="4"
-                  checked={formData.summerTerm === '4'}
-                  onChange={handleInputChange}
-                />
-                4
-              </label>
+            <p className="form-label">Click on the years you are planning to do summer term</p>
+            <div className="button-group">
+              {[1, 2, 3, 4].map((year) => (
+                <button
+                  key={year}
+                  type="button"
+                  className={`student-type-button ${formData.summerTerm === year.toString() ? 'active' : ''}`}
+                  onClick={() => setFormData({ ...formData, summerTerm: year.toString() })}
+                >
+                  {year}
+                </button>
+              ))}
             </div>
 
             <h2>How many courses are you planning to do each year?</h2>
@@ -337,7 +237,7 @@ const FormPage = () => {
                     <label>{term}</label>
                     <input
                       type="range"
-                      min={0} 
+                      min={0}
                       max={term === 'T0' ? 2 : 4}
                       value={formData.coursesPerYear[`year${year}`][term]}
                       onChange={(e) => handleSliderChange(e, `year${year}`, term)}
@@ -356,14 +256,14 @@ const FormPage = () => {
       )}
 
       {/* Step 3: Career Information */}
-        {currentStep === 3 && (
-          <>
-            <h1 className="title">Career Information</h1>
-            <form className="form-container" onSubmit={handleSubmit}>
-              <p className="description">
-                What career are you looking into? (Choose up to 3, minimum 1).
-              </p>
-
+      {currentStep === 3 && (
+        <>
+          <h1 className="title">Career Information</h1>
+          <form className="form-container" onSubmit={handleSubmit}>
+            <p className="form-label">
+              What career are you looking into? (Choose up to 3, minimum 1).
+            </p>
+            <div className="career-button-group">
               {[
                 "Architecture, Planning & Construction Management",
                 "Business & Commerce",
@@ -376,29 +276,32 @@ const FormPage = () => {
                 "Medicine & Health Science",
                 "Science & Environment",
               ].map((career) => (
-                <div className="checkbox-group" key={career}>
-                  <label>
-                    <input
-                      type="checkbox"
-                      name="careers"
-                      value={career}
-                      checked={formData.careers.includes(career)}
-                      onChange={handleCheckboxChange}
-                      disabled={
-                        formData.careers.length >= 3 && !formData.careers.includes(career)
-                      }
-                    />
-                    {career}
-                  </label>
-                </div>
+                <button
+                  key={career}
+                  type="button"
+                  className={`career-button ${formData.careers.includes(career) ? 'active' : ''}`}
+                  onClick={() => {
+                    let updatedCareers = [...formData.careers];
+                    if (updatedCareers.includes(career)) {
+                      updatedCareers = updatedCareers.filter((selectedCareer) => selectedCareer !== career);
+                    } else if (updatedCareers.length < 3) {
+                      updatedCareers.push(career);
+                    }
+                    setFormData({ ...formData, careers: updatedCareers });
+                  }}
+                  disabled={formData.careers.length >= 3 && !formData.careers.includes(career)}
+                >
+                  {career}
+                </button>
               ))}
+            </div>
 
-              <button type="submit" className="next-button" disabled={formData.careers.length < 1}>
-                Finish
-              </button>
-            </form>
-          </>
-        )}
+            <button type="submit" className="next-button" disabled={formData.careers.length < 1}>
+              Finish
+            </button>
+          </form>
+        </>
+      )}
     </div>
     </div>
   );
