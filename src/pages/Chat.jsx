@@ -49,13 +49,13 @@ const Chat = () => {
   }, [messages]);
 
   return (
-    <div>
+    <div className='backers'>
       <Navbaradvice />
+      <img className='shapers' src = { Shapers }/>
         <div className='box'/>
         <div className='box1'/>
         <div className="chat-container">
           <div className="chat-box" ref={chatBoxRef}>
-          <image className='shapers' src = { Shapers }/>
             {messages.map((msg, index) => (
               <div key={index} className={`message-container ${msg.role}`}>
                 <img 
