@@ -16,7 +16,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className='rightSide'>
+      <div className='profileSide'>
         <div 
           className="profile-container" 
           onMouseEnter={() => setDropdownOpen(true)}
@@ -25,7 +25,7 @@ const Navbar = () => {
           <img src={Profile} alt="Profile" className="profile-picture" />
           {dropdownOpen && (
             <div className="dropdown-menu">
-              <Link to="/profile" className="dropdown-item">Profile</Link>
+              <Link to="/ProfilePage" className="dropdown-item">Profile</Link>
               <Link to="/settings" className="dropdown-item">Settings</Link>
               <Link to="/logout" className="dropdown-item">Log Out</Link>
             </div>
