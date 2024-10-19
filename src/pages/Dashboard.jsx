@@ -5,8 +5,11 @@ import Circle from '../assests/images/circle.png';
 import Square from "../assests/images/square.png";
 import Tri from '../assests/images/tri.png';
 import Navbaradvice from '../components/Navbaradvice';
+import { useLocation } from 'react-router-dom';
 
 const Landingpage = () => {
+  const location = useLocation();
+  const userId = location.state?.userId; // get userid from location state
   return (
     <div className='Landingpage'>
       <Navbaradvice/>

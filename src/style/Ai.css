@@ -8,8 +8,8 @@
 }
 
 .ai-container {
-    max-width: 800px;
-    margin: 50px auto;
+    max-width: 1800px;
+    margin: 10px auto;
     padding: 20px;
     font-family: 'CsClaireMono', sans-serif;
     text-align: center;
@@ -20,7 +20,7 @@
 }
 
 .run-ai-button {
-    padding: 80px 200px;
+    padding: 30px 200px;
     background-color: #bcc796;
     color: white;
     border: none;

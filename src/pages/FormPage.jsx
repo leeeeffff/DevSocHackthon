@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../style/FormPage.css';
 import Nav from '../components/Signnav';
 
 const FormPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   // Get userId from either location.state (regular sign-up) or query parameters (OAuth sign-up)
   const userId = location.state?.userId || new URLSearchParams(location.search).get('userId');
 
@@ -70,8 +71,7 @@ const FormPage = () => {
           const data = await response.json();
           console.log('Personal information saved:', data);
           alert('Personal information saved successfully!');
-          // Redirect to the dashboard
-          window.location.href = '/dashboard';
+          navigate('/dashboard', { state: { userId } });
         } else {
           const errorData = await response.json();
           setError(errorData.message);

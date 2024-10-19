@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../style/Landingbanner.css";
+import { useNavigate } from "react-router-dom";
 
 export const Landingbanner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -9,6 +10,13 @@ export const Landingbanner = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(200 - Math.random() * 100);
   const period = 1500;
+  const navigate = useNavigate();
+
+  const handleAIAdvisorClick = () => {
+    navigate('/Chat', {
+      state: { userId }
+    });
+  };
 
   useEffect(() => {
     let ticker = setInterval(() => {

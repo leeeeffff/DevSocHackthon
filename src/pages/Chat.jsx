@@ -4,11 +4,15 @@ import Navbaradvice from '../components/Navbaradvice';
 import Profile from '../assests/images/profile.png'; 
 import Aipic from '../assests/images/Ai.png'; 
 import Shapers from '../assests/images/shape.png'; 
+import { useLocation } from 'react-router-dom';
+
 
 const Chat = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
   const chatBoxRef = useRef(null); // Reference to chat box
+  const location = useLocation();
+  const userId = location.state?.userId;
 
   const handleSend = async (e) => {
     e.preventDefault();
@@ -23,7 +27,7 @@ const Chat = () => {
       const res = await fetch('http://localhost:5000/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ message: input, userId }),
       });
 
       const data = await res.json();
