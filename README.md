@@ -1,4 +1,4 @@
-# DevSocHackathon
+# Pathways
 
 ##Inspiration
 + The idea for Pathways emerged from the challenges that many UNSW Computer Science students face when navigating their academic journey. Students must sift through a plethora of resources, such as the UNSW Handbook, which contains hundreds of courses, each with its own prerequisites and eligibility criteria. This often leads to confusion and frustration, especially when trying to determine the best path forward that aligns with their interests, academic goals, and degree requirements. Students often spend considerable time trying to find the right courses and build a coherent plan. This situation inspired the development of Pathways—a solution designed to simplify the academic planning process.
